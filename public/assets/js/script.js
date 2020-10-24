@@ -7209,6 +7209,7 @@ var widgetsAccordion = $.widget( "ui.accordion", {
 			this._toggleComplete( data );
 		}
 
+
 		toHide.attr( {
 			"aria-hidden": "true"
 		} );
@@ -21290,10 +21291,17 @@ $(".price-field-max").val(max);
       {
         breakpoint: 475,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
+        {
+            breakpoint: 375,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            },
+        }
     ],
   });
 }); //end

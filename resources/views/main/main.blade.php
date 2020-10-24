@@ -280,6 +280,43 @@ a.logo, .all_categories_btn {
       width: 35px;
   height: auto !important;
 }
+
+            @media (max-width: 992px) {
+                body,html {
+                    overflow-x: hidden;
+                }
+                .home-slider .slick-slide img {
+                    height: auto;
+                }
+                .home-page {
+                    padding-top: 25px;
+                }
+                .hdr_bottom_main {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .hdr_bottom_main_left {
+                    flex-flow: wrap;
+                    justify-content: center;
+                    margin: auto;
+                }
+                form.search_form_header {
+                    width: 100%;
+                    flex: 1 0 100%;
+                    margin-bottom: 15px;
+                    margin-top: 15px;
+                }
+                .slider-range-box .ui-slider {
+                    min-width: auto;
+                    margin: auto;
+                    width: auto;
+                    padding: initial;
+                }
+                .home-slider .slick-arrow{
+                    display: none !important;
+                }
+            }
         </style>
         
     </head>

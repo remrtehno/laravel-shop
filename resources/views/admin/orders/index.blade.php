@@ -37,7 +37,7 @@
                             <th>Название</th>
                             <th>Статус</th>
                             <th>Цена</th>
-
+                            <th>Цена с доставкой</th>
 
                             <th>Наличными</th>
                             <th>Действия</th>
@@ -54,6 +54,7 @@
                             <td>{{ $item->tovar_name }}</td>
                            <td>{{ $item->getStatus() }}</td>
                             <td> {{ $item->tovar_price }}</td>
+                            <td>{{ $item->getMeta('total') }}</td>
 
 
                             <td>{{ $item->typeBill() }}</td>

@@ -133,7 +133,7 @@ $(function () {
 	$('.delivery').change(function () {
 		if($(this).is(":checked")) {
 
-            var preTotal = $('[data-total]').data('total') && $('[data-total]').data('total').replace(/,/g, '.');
+            var preTotal = $('[data-total]').data('total');// && $('[data-total]').data('total');//.replace(/,/g, '');
 
 			var total = $(this).data('amount') || 0;
 

@@ -74,7 +74,9 @@ class Basket extends Controller
         $meta_key = "";
         $meta_desc = "";
         
-        return view("checkout.index",compact('title','meta_key','meta_desc'));
+        $delivery  = News::find(1);
+        
+        return view("checkout.index",compact('title','meta_key','meta_desc', 'delivery'));
     }
 
     public function makeOrder(Request $request) {

@@ -86,12 +86,12 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' =>'required',
+//            'title' =>'required',
+//            'text'   =>  'required',
+//            'anonce'   =>  'required',
             'text'   =>  'required',
-            'anonce'   =>  'required',
-            'text'   =>  'required',
-
-            'img' =>  'nullable|image'
+//
+//            'img' =>  'nullable|image'
         ]);
 
         $post = News::find($id);

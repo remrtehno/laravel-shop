@@ -11,7 +11,7 @@ class Order extends Model
 
 
 	 public function getMeta($field) {
-	 	if($this->meta)
+	 	if($this->meta && isset(unserialize($this->meta)[$field]))
 	 	return unserialize($this->meta)[$field];
 	 }
 	

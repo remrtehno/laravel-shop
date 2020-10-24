@@ -29,7 +29,7 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="form-group">
-                        <a href="{{route('news.create')}}" class="btn btn-success">Добавить</a>
+                        {{--<a href="{{route('news.create')}}" class="btn btn-success">Добавить</a>--}}
                     </div>
 
 
@@ -38,9 +38,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Название</th>
-                            <th>Автор</th>
-
-                            <th>Картинка</th>
+                            <th>Значение</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
@@ -50,22 +48,21 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->title }}</td>
-                            <td>{!! $item->anonce !!}  </td>
 
+                            <td>{{$item->text}}</td>
 
-                            <td>
-                                <img src="{{ $item->getImage() }}" alt="" width="100">
-                            </td>
                             <td><a href="{{ route('news.edit',['id'=>$item->id]) }}" class="fa fa-pencil" style="float: left;"></a>
 
-<form action="{{route('news.destroy',['id'=>$item->id])}}" method="post">
-    @csrf
+{{--<form action="{{route('news.destroy',['id'=>$item->id])}}" method="post">--}}
+    {{--@csrf--}}
 
-    <input type="hidden" name="_method" value="delete">
-                                <button onclick="return confirm('are you sure?')" type="submit" class="delete" style="float: left;border: 0;background: none; color: #0d6aad">
-                                    <i class="fa fa-remove"></i>
-                                </button>
-                                </form>
+    {{--<input type="hidden" name="_method" value="delete">--}}
+                                {{--<button onclick="return confirm('are you sure?')" type="submit" class="delete" style="float: left;border: 0;background: none; color: #0d6aad">--}}
+                                    {{--<i class="fa fa-remove"></i>--}}
+                                {{--</button>--}}
+                                {{--</form>--}}
+
+
                             </td>
                         </tr>
 

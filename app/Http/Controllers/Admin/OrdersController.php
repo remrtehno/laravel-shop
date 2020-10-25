@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Invoice;
 use App\Order;
+use App\Shops;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,11 @@ class OrdersController extends Controller
     {
 
         $orders = Order::all();
-        return view("admin.orders.index", compact('orders'));
+        $invoces = Invoice::all();
+        
+        $shops = Shops::all();
+        
+        return view("admin.orders.index", compact('orders', 'shops','invoces'));
     }
 
     /**
@@ -60,7 +66,7 @@ class OrdersController extends Controller
         //
 
         $order = Order::where('id', '=', $id)->first();
-        $order->status = 1;
+        $order->payment_status = 1;
         $order->is_returned = 0;
         $order->is_text = NULL;
         $order->save();
@@ -76,7 +82,7 @@ class OrdersController extends Controller
 
         $order = Order::where('id', '=', $request['id'])->first();
         $order->is_returned = 1;
-        $order->status = 0;
+        $order->payment_status = 0;
         $order->is_text = $request['is_text'];
         $order->save();
 
@@ -89,11 +95,14 @@ class OrdersController extends Controller
      * @param  \App\Shops  $shops
      * @return \Illuminate\Http\Response
      */
-    public function show($user_id)
+    public function show($id)
     {
 
-       // $shops = Shops::with(['products'])->withCount('products')->where('user_id', '=', $user_id)->get();
-        return view('admin.orders.index',compact('shops'));
+	    $orders = Order::where('invoice_id', '=', $id)->get();
+	    
+	    $invoice = Invoice::find($id);
+	    
+        return view('admin.orders.detail',compact('orders', 'invoice'));
     }
 
     /**
@@ -121,8 +130,8 @@ class OrdersController extends Controller
         $status = $request->all();
 
 
-        $order = Order::find($id);
-        $order->status = 1;
+        $order = Invoice::find($id);
+        $order->payment_status = 1;
         $order->save();
 
         return $this->index();
@@ -137,7 +146,9 @@ class OrdersController extends Controller
     public function destroy($id)
     {
 
-        $order = Order::find($id);
+        $order = Invoice::find($id);
+	      Order::where('invoice_id', '=', $id)->delete();
+	      
         if($order->delete()) return redirect()->back();
     }
 

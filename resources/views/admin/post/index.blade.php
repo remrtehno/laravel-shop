@@ -38,6 +38,7 @@
                             <th>Название</th>
                             <th>Цена</th>
                             <th>Категория</th>
+                            <th>Магазин</th>
 
                             <th>Картинка</th>
                             <th>Действия</th>
@@ -63,6 +64,9 @@
                                 -
                             @endif
                         </td>
+                            <td>
+                                {{$item->getShopByProduct() ? $item->getShopByProduct()->title : '-'}}
+                            </td>
 
                             <td>
                                 <img src="{{ $item->getImage() }}" alt="" width="100">

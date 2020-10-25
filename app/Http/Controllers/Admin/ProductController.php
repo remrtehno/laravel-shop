@@ -83,9 +83,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+	    $user_id = Auth::id();
+	    $shops = Shops::all();
         $cat = ProdCat::all();
         $sl = Product::find($id);
-        return view("admin.post.edit",compact('cat','sl'));
+        return view("admin.post.edit",compact('cat','sl', 'shops'));
     }
 
     /**
@@ -101,6 +103,7 @@ class ProductController extends Controller
             'title' =>'required',
 
             //'text' =>'required',
+	          'shop_id' => 'required',
 
             'img' =>  'nullable|image'
         ]);
@@ -113,6 +116,8 @@ class ProductController extends Controller
 
         $post->setHits($request->get('is_hits'));
         $post->setSale($request->get('is_sale'));
+        
+        //dd($request->all());
 
         return redirect()->route('post.index');
     }

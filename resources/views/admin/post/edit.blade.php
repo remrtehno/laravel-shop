@@ -48,6 +48,20 @@
                                 </select>
                             </div>
 
+
+                            <div class="form-group">
+                                <label>Магазин</label>
+                                <select class="form-control select2" style="width: 100%;" name="shop_id">
+
+
+                                    @foreach($shops as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
+
+                                    @endforeach
+
+                                </select>
+                            </div>
+
                                                         <div class="form-group">
                                 <label>
                                     Распродажа

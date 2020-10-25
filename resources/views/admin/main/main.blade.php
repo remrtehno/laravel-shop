@@ -265,6 +265,9 @@
   .orders-count:empty {
     display: none;
   }
+  .table-striped>tbody>tr[bgcolor="pink"] {
+    background-color: rgb(255, 192, 203) !important;
+  }
 </style>
 <script>
     $(document).ready(function(){

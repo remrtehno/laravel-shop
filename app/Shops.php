@@ -61,6 +61,9 @@ class Shops extends Model
         return $cat;
     }
 
+    public function getOrders() {
+        	return Order::where('shop_id', '=', $this->id)->where('status', '=', 'Ожидает')->get();
+    }
 
 
     public static function add($fields)

@@ -27,66 +27,52 @@
                     <h3 class="box-title">Все заказы</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
-                    
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                            <th>Дата</th>
-                            <th>Магазин</th>
-                            <th>Название</th>
-                            <th>Статус</th>
-                            <th>Цена</th>
-                            <th>Цена с доставкой</th>
 
-                            <th>Наличными</th>
-                            <th>Действия</th>
-                        </tr>
+
+
+
+                <div class="box-body">
+                    <table class="table table-bordered table-striped DataTable">
+                        <thead>
+                            <tr>
+                                <th># ID</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
                         </thead>
                         <tbody>
+                            @foreach($invoces as $item)
+                                <tr {{ $item->payment_status == 'Ожидает' ? 'bgcolor=pink' : ''  }} {{ $item->payment_status == 1 ? 'bgcolor=lightgreen' : ''  }} >
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->created_at}}</td>
+                                    <td>
+                                        <a href="{{route('orders.show', ['id' => $item->id])}}" style="float: left;">Перейти</a>
+                                        <form action="{{ route('orders.update',['id'=>$item->id]) }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="PUT">
 
-                            @if(!isset($orders)) <?php $orders = []; ?> @endif
-
-                        @foreach($orders as $item)
-                        <tr {{ $item->status == 'Ожидает' ? 'bgcolor=pink' : ''  }} {{ $item->status == 1 ? 'bgcolor=lightgreen' : ''  }} >
-                                 <td>{{ $item->created_at }}</td>
-                            <td>{{ $item->getShop() ? $item->getShop()->title : ''  }}</td>
-                            <td>{{ $item->tovar_name }}</td>
-                           <td>{{ $item->getStatus() }}</td>
-                            <td> {{ $item->tovar_price }}</td>
-                            <td>{{ $item->getMeta('total') }}</td>
-
-
-                            <td>{{ $item->typeBill() }}</td>
-
-                           
-                            <td>
-                                <form action="{{ route('orders.update',['id'=>$item->id]) }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="_method" value="PUT">
-
-                                    <button style="float: left;border: 0;background: none; color: #0d6aad" type="submit" class="fa fa-check delete" style="float: left;">
+                                            <button style="float: left;border: 0;background: none; color: #0d6aad"
+                                                    type="submit" class="fa fa-check delete" style="float: left;">
 
 
-                                    </button>
-                                </form>
-                                    
+                                            </button>
+                                        </form>
 
 
-                                <form action="{{route('orders.destroy',['id'=>$item->id])}}" method="post">
-                                    @csrf
+                                        <form action="{{route('orders.destroy',['id'=>$item->id])}}" method="post">
+                                            @csrf
 
-                                    <input type="hidden" name="_method" value="delete">
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete" style="float: left;border: 0;background: none; color: #0d6aad">
-                                        <i class="fa fa-remove"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        </tr>
-                        @endforeach
+                                            <input type="hidden" name="_method" value="delete">
+                                            <button onclick="return confirm('are you sure?')" type="submit" class="delete"
+                                                    style="float: left;border: 0;background: none; color: #0d6aad">
+                                                <i class="fa fa-remove"></i>
+                                            </button>
+                                        </form>
 
-                        </tfoot>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
                 <!-- /.box-body -->

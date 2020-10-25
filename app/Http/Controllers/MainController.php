@@ -209,10 +209,13 @@ class MainController extends Controller
         $product = Product::find($id);
 
         $price = 0;
-        if($product->price) $price = $product->price; 
+	
+	    if($product->price) $price = trim(preg_replace('/[ ,.]/', '', $product->price));
+	    Cart::add($product->id, $product->title, 1, $price);
+	    return redirect('/cart');
+	    
+	    
 
-        Cart::add($product->id, $product->title, 1, $price);
-        return redirect('/cart');
     }
 
     public function orders(){

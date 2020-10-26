@@ -109,7 +109,7 @@ class Basket extends Controller {
 				'user_id'     => Auth::check() ? Auth::user()->id : 0,
 				'shop_id'     => $prod->shop_id,
 				'meta'        => $meta,
-				'qty'         => $prod->qty,
+				'qty'         => $item->qty,
 				'invoice_id'  => $invoice->getKey(),
 			] );
 			

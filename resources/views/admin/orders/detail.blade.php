@@ -36,6 +36,8 @@
                             <th>Магазин</th>
                             <th>Название</th>
                             <th>Цена</th>
+                            <th>Цена -0.3%</th>
+                            <th>Кол-во</th>
 
 
                             {{--<th>Действия</th>--}}
@@ -54,15 +56,26 @@
                                     <a style="float: right;" onclick=" $(this.nextElementSibling).toggle()">Детали</a>
                                     <div style="display: none;">
                                         @if($item->getShop())
-                                            Адрес: {{$item->getShop()->address}} <br>
+                                            <hr style="margin: 7px 5px;">
+                                            Адрес: {{$item->getShop()->address}}
+                                            <hr style="margin: 7px 5px;">
+                                            Телефон: {{$item->getShop()->phone}}
+                                            <hr style="margin: 7px 5px;">
                                             {{$item->getShop()->text}}
-                                            <img src="{{$item->getShop()->getImage()}}" height="80" >
+
                                         @endif
                                     </div>
                                 </td>
                                 <td>{{ $item->tovar_name }}</td>
                                 {{--<td>{{ $item->getStatus() }}</td>--}}
-                                <td> {{ $item->tovar_price }}</td>
+                                <td> {{ $item->tovar_price }} <br>
+                                    <b>Общая:</b> {{ (int)$item->tovar_price * (int)$item->qty }}
+                                </td>
+                                <td> {{ (int)$item->tovar_price * 0.7 }} <br>
+                                    <b>Общая:</b> {{ (int)$item->tovar_price * 0.7 * (int)$item->qty }}
+                                </td>
+                                <td> {{ $item->qty }}</td>
+
 
 
 

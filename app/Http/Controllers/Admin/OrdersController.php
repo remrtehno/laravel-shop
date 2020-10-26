@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
 {
@@ -128,8 +129,8 @@ class OrdersController extends Controller
     public function update(Request $request, $id)
     {
         $status = $request->all();
-
-
+	      DB::table('orders')->where('invoice_id', '=', $id)->update(array('status' => 1));
+        
         $order = Invoice::find($id);
         $order->payment_status = 1;
         $order->save();

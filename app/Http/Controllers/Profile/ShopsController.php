@@ -46,9 +46,13 @@ class ShopsController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'title' =>'required',
-        ]);
+
+	
+	    $this->validate($request, [
+		    'title' =>'required',
+		    'phone' => 'required',
+		    'address' => 'required',
+	    ]);
 
         $prod = Shops::add($request->all());
         $prod->uploadImage($request->file('img'));
@@ -102,9 +106,13 @@ class ShopsController extends Controller
      */
     public function update(Request $request, Shops $shops, $id)
     {
-        $this->validate($request, [
-            'title' =>'required',
-        ]);
+     
+	
+	    $this->validate($request, [
+		    'title' =>'required',
+		    'phone' => 'required',
+		    'address' => 'required',
+	    ]);
 
         $post = Shops::find($id);
         $post->edit($request->all());

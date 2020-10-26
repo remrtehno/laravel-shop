@@ -62,13 +62,14 @@
                                     <input style="float: left; margin-top: 5px;" data-amount="{{$delivery->text}}" type="radio" class="form-control delivery"  name="delivery">
                                 </label>
 
+
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
                                         <th align="center" scope="row">Итого</th>
                                         <td align="center">
-                                            <b class="total">{{ preg_replace('/\,/', '',Cart::total(0)) }}</b> сум
-                                            <input type="hidden" data-total="{{ preg_replace('/\,/', '',Cart::total(0)) }}" class="total" name="total">
+                                            <b class="total">{{ preg_replace('/\,/', '',Cart::subtotal(0)) }}</b> сум
+                                            <input type="hidden" data-total="{{ preg_replace('/\,/', '',Cart::subtotal(0)) }}" value="{{ preg_replace('/\,/', '',Cart::subtotal(0)) }}" class="total" name="total">
                                         </td>
                                     </tr>
                                     </tbody>

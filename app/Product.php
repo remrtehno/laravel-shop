@@ -65,9 +65,10 @@ class Product extends Model
 
     public static function add($fields)
     {
-	    if (Auth::check() && Auth::user()->role != 'admin'){
-		    $fields['price'] = $fields['price'] + ($fields['price'] * 0.03);
-	    }
+    	$percentage = News::find(2);
+	    //if (Auth::check() && Auth::user()->role != 'admin'){
+		    $fields['price'] = $fields['price'] + ($fields['price'] * (int) $percentage->text);
+	    //}
 	      
         $post = new static;
         $post->fill($fields);

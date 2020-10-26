@@ -36,7 +36,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Название</th>
-
+                            <th>Телефон</th>
 
 
                             <th>Картинка</th>
@@ -49,6 +49,7 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->title }}</td>
+                            <td>{{ $item->phone }}</td>
                            
               
 

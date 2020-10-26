@@ -4,13 +4,13 @@
 
 @section('content')
 
-<main>
+    <main>
         <section class="product-details-page">
             <div class="row">
                 <div class="small-12 medium-12 columns">
                     <nav style="position:relative">
                         <ul class="breadcrumbs">
-                             <li> <a href="/">Главная </a> </li>
+                            <li> <a href="/">Главная </a> </li>
                             <li> <a href="{{route('category',['slug'=>$poductCat->slug]) }}">{{$poductCat->title}}</a> </li>
                             <li> <a>{{$product->title}} </a> </li>
                         </ul>
@@ -28,12 +28,12 @@
                                     {!! $product->getSale() !!}
                                     {!! $product->getHits() !!}
                                 </div>
-                                
+
 
                                 <div class="product-image-carousel">
                                     <div class="slick-slider">
                                         <div class="image">
-                                             
+
                                             <img src="{{ $product->getImageHome() }}" width="400" height="400" alt="">
                                         </div><!-- /.image 400x400 -->
                                     </div>
@@ -43,25 +43,25 @@
                         <div class="small-12 {{ $product->getShopByProduct() ? 'medium-3' : 'medium-6' }} columns">
                             <div class="product-detail animated fadeInUp normal" data-animation="animated fadeInUp normal">
                                 <h2 class="title"> {{ $product->title }} <div class="share-box"> <a class="share-link-button"><i class="link-share fa fa-share-square-o"></i></a>
-                                        
+
                                     </div>
                                 </h2>
                                 <div class="product__price">
-                                 @if($product->label)
-                                              <div style="display: inline-block; background: red; font-size: 16px; color: white; padding: 5px 10px;
+                                    @if($product->label)
+                                        <div style="display: inline-block; background: red; font-size: 16px; color: white; padding: 5px 10px;
                                               "> Скидка {{$product->label}} %</div>
-                                @endif
-                                <p></p>
-                                     <strong>  
-                                {{ $product->price }}  <span>сум.</span>                        
-                            </strong> <span class="small__text">за<!-- --> 1<!-- -->шт </span> </div>
+                                    @endif
+                                    <p></p>
+                                    <strong>
+                                        {{ $product->price }}  <span>сум.</span>
+                                    </strong> <span class="small__text">за<!-- --> 1<!-- -->шт </span> </div>
 
                                 <div class="row">
                                     <div class="small-12 medium-12 columns main-buttons">
                                         <div class="clearfix">
-                                            <div class="add-cart horizontal cart-41908                              wide-box not-added"> 
-<a href="{{ route('add', [ 'id' => $product->id ]) }}">
-                                                <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> <!-- -->В корзину </button>
+                                            <div class="add-cart horizontal cart-41908                              wide-box not-added">
+                                                <a href="{{ route('add', [ 'id' => $product->id ]) }}">
+                                                    <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> <!-- -->В корзину </button>
 
                                                 </a> </div>
                                         </div>
@@ -76,91 +76,90 @@
                             </div>
                         </div>
                         @if($product->getShopByProduct())
-                        <div class="small-12 medium-3 columns">
-                            <div class="product-right product_company_info h-100">
-                                <h3 class="h3 title-company-info">Информация о продавце</h3>
-                                <a href="{{route('shop-detail', ['slug'=> $product->getShopByProduct() ? $product->getShopByProduct()->slug : 0 ]) }}" class="product-right-title">
-                                    {{ $product->getShopByProduct() ? $product->getShopByProduct()->title : ''}}
-                                </a>
-                                <div class="mer-lname">
-                                    {{ $product->getShopByProduct() ? $product->getShopByProduct()->title : ''}}
+                            <div class="small-12 medium-3 columns">
+                                <div class="product-right product_company_info h-100" style="  max-width: 100%;">
+                                    <h3 class="h3 title-company-info">Контакты</h3>
+                                    <a  class="product-right-title">
+
+                                        Адрес: <b>{{$contacts->address}}</b>
+                                    </a>
+                                    <div class="mer-lname">
+                                        Телефон: <a href="tel:{{$contacts->phone}}"> {{$contacts->phone}} </a> <br>
+                                        Email: <a href="mailto:{{$contacts->email}}"> {{$contacts->email}} </a>
+
+                                    </div>
+                                    <br>
+
+
+
+
+                                    <br>
+                                    <div class="contacts__item">
+
+                                    </div>
+
                                 </div>
-                                <br>
-                                <a href="{{route('shop-detail', ['slug'=> $product->getShopByProduct() ? $product->getShopByProduct()->slug : 0 ]) }}" class="product-image d-flex align-items-center justify-content-center" rel="nofollow">
-                                 <!-- <img src="/public/uploads/shops/no_logo.svg"> -->
-                                     
-                                     <img src="{{ $product->getShopByProduct() ? $product->getShopByProduct()->getImage() : ''}}" alt="">
-                                 </a>
-
-
-
-                                 <br>
-                                 <div class="contacts__item">
-                                    {{ $product->getShopByProduct() ? $product->getShopByProduct()->address : ''}}
-                                </div>
-
                             </div>
-                        </div>
                         @endif
                     </div>
                 </div>
                 @if($products->count())
-                <div class="similar-products beauty-wrapper animated fadeInUp normal">
-                    <div class="row">
-                        <div class="small-12">
-                            <section class="products-container products-slider similar-products show">
-                                <div class="row">
-                                    <div class="small-12">
-                                        <h4 class="section-title beauty-title">Каталог лучших предложений</h4>
-                                        <div>
-                                            <section class="products-container products-container-wrap">
-                                                <div class="row small-up-2 medium-up-4 large-up-6" style="padding-left: 15px; padding-right: 15px">
-                                                     @foreach($products as $val)
-                                       
-                                       
-                                                    <div class="column no-column-padding">
-                                                        <div class="product-item"> 
-                                                            <a class="clickable" aria-current="false" href="{{route('detail',['slug'=>$val->slug])}}">
-                                                                @if($val->label)
-                                                                <div class="label-container"> <span class="label sale alert inline">{{$val->label}} %</span> </div>
-                                                                @endif
-                                                                <div class="bottom">
-                                                                    <div class="product-image">
-                                                                        <img src="{{ $val->getImage() }}" class="product-img square-180" />
-                                                                    </div>
-                                                                    <h4 class="product-title">{{$val->title}}</h4>
-                                                                    <div class="product__price clearfix"> 
-                                                                        <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
-                                                                </div>
-                                                                <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> В корзину </button> </div>
-                                                            </a> </div>
+                    <div class="similar-products beauty-wrapper animated fadeInUp normal">
+                        <div class="row">
+                            <div class="small-12">
+                                <section class="products-container products-slider similar-products show">
+                                    <div class="row">
+                                        <div class="small-12">
+                                            <h4 class="section-title beauty-title">Каталог лучших предложений</h4>
+                                            <div>
+                                                <section class="products-container products-container-wrap">
+                                                    <div class="row small-up-2 medium-up-4 large-up-6" style="padding-left: 15px; padding-right: 15px">
+                                                        @foreach($products as $val)
+
+
+                                                            <div class="column no-column-padding">
+                                                                <div class="product-item">
+                                                                    <a class="clickable" aria-current="false" href="{{route('detail',['slug'=>$val->slug])}}">
+                                                                        @if($val->label)
+                                                                            <div class="label-container"> <span class="label sale alert inline">{{$val->label}} %</span> </div>
+                                                                        @endif
+                                                                        <div class="bottom">
+                                                                            <div class="product-image">
+                                                                                <img src="{{ $val->getImage() }}" class="product-img square-180" />
+                                                                            </div>
+                                                                            <h4 class="product-title">{{$val->title}}</h4>
+                                                                            <div class="product__price clearfix">
+                                                                                <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                                            </div>
+                                                                            <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> В корзину </button> </div>
+                                                                    </a> </div>
+                                                            </div>
                                                     </div>
-                                                </div>
 
 
-                                         @endforeach
+                                                @endforeach
 
-                                                    
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+
+                                            </div>
+                                </section>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @else
-                <p style="padding: 30px;"></p>
-                @endif
+        </section>
+        </div>
+        </div>
+        </div>
+        @else
+            <p style="padding: 30px;"></p>
+            @endif
 
             </div>
-        </section>
+            </section>
     </main>
 
 
 
-    
+
 
 @endsection
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\News;
 use App\Statistics;
 use App\Shops;
 use Illuminate\Http\Request;
@@ -65,6 +66,8 @@ class StatisticsController extends Controller
      */
     public function show(Request $request, $id)
     {
+    	
+    	$precentage = News::find(2);
 	
 	    $from = null;
 	    $to  = null;
@@ -93,7 +96,7 @@ class StatisticsController extends Controller
 
 //$getmonths= DB::table('Financial_Year') ->whereRaw('"'.$dt.'" between `start_date` and `End_date`')->get();
 
-        return view("admin.statistics.detail", compact('shops','to', 'from'));
+        return view("admin.statistics.detail", compact('shops','to', 'from', 'precentage'));
     }
 
     /**

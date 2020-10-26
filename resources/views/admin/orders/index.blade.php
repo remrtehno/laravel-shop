@@ -32,7 +32,7 @@
 
 
                 <div class="box-body">
-                    <table class="table table-bordered table-striped DataTable">
+                    <table class="table table-bordered DataTable">
                         <thead>
                             <tr>
                                 <th># ID</th>

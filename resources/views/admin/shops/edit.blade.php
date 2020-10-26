@@ -57,7 +57,16 @@
                                     <input type="text" value="{{$sl->map }}" class="form-control" placeholder="41.77382, 60.883214" id="exampleInputEmail1" placeholder="" name="map">
                                 </div>
 
-                               
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Телефон</label>
+                                        <input type="text" class="form-control" value="{{$sl->phone }}"  placeholder="+998901232323" id="exampleInputEmail1" placeholder="" name="phone">
+                                    </div>
+
+
+
 
 
                              <div class="form-group">

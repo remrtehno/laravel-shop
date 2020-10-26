@@ -94,7 +94,7 @@
                                         </td>
                                         <td>
                                             {{ $val->price ? $val->price : '0' }} сум <br>
-                                            <b>Ваш доход:</b> {{ $val->price ? $val->price * 0.03 : '0' }}сум.
+                                            <b>Ваш доход:</b> {{ $val->price ? $val->price * $precentage->text : '0' }}сум.
                                         </td>
                                     </tr>
                                 @endforeach
@@ -109,7 +109,7 @@
                                         </td>
                                         <td>
                                             {{ $val->price ? $val->price : '0' }} сум <br>
-                                            <b>Ваш доход:</b> {{ $val->price ? $val->price * 0.03 : '0' }}сум.
+                                            <b>Ваш доход:</b> {{ $val->price ? $val->price * $precentage->text : '0' }}сум.
                                         </td>
                                     </tr>
                                 @endforeach

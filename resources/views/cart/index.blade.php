@@ -56,7 +56,7 @@
 
                                         </td>
                                         <td><?php echo $row->price; ?> сум</td>
-                                        <td><?php echo $row->total; ?> сум</td>
+                                        <td><?php echo $row->price * $row->qty; ?> сум</td>
                                     </tr>
 
                                 <?php endforeach;?>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     //
-	 protected $fillable = ['user_id','invoice_id', 'meta','shop_id', 'tovar_price', 'tovar_name', 'status'];
+	 protected $fillable = ['user_id','invoice_id', 'qty', 'meta','shop_id', 'tovar_price', 'tovar_name', 'status'];
 
 
 	 public function getMeta($field) {

@@ -53,7 +53,8 @@
                                
                             </div>
 
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Координаты на карте</label>
                                     <input type="text" class="form-control" placeholder="41.77382, 60.883214" id="exampleInputEmail1" placeholder="" name="map">
@@ -61,6 +62,16 @@
 
                                
                             </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Телефон</label>
+            <input type="text" class="form-control" placeholder="+998901232323" id="exampleInputEmail1" placeholder="" name="phone">
+        </div>
+
+
+    </div>
+
 
                              <div class="col-md-12">
                                     <label for="exampleInputFile">Картинка</label>

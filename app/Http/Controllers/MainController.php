@@ -123,8 +123,9 @@ class MainController extends Controller
         $title = "$product->title";
         $meta_desc = "$product->meta_desc";
         $meta_key = "$product->meta_key";
+        $contacts = Contact::find(1);
 
-        return view("products.detail",compact('product','cat','products','poductCat','title','meta_key','meta_desc'));
+        return view("products.detail",compact('contacts','product','cat','products','poductCat','title','meta_key','meta_desc'));
     }
 
 

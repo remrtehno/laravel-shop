@@ -14,7 +14,7 @@ class Shops extends Model
     //
     use Sluggable;
     protected $table = "shops";
-    protected $fillable =['title','anonce','user_id','img', 'address', 'map'];
+    protected $fillable =['title','anonce','phone','user_id','img', 'address', 'map'];
 
 
     public function removeImage()
@@ -28,31 +28,36 @@ class Shops extends Model
     }
 
     public  function statistics(){
+    	//        return DB::select('select COUNT(*) as cnt, SUM(price) as price from invoices where invoices.id IN (select invoice_id from orders where shop_id = ? and status = 1)', [$this->id]);
+	
+	    // dd(DB::select('select COUNT(*) as cnt, SUM(price) as price from invoices where invoices.id IN (select invoice_id from orders where shop_id = ? and status = 1)', [$this->id]));
     	
         return DB::select('select COUNT(*) as cnt, SUM(tovar_price) as price from orders where shop_id = ? and status = 1', [$this->id]);
+        
+//        "
+//        'select COUNT(*) as cnt, SUM(tovar_price) as price from invoces where id IN (select invoice_id from orders where where shop_id = ? and status = 1)', [$this->id]
+//        "
     }
 
-        public  function statisticsByDate($fromDate, $toDate){
+	    public  function statisticsByDate($fromDate, $toDate){
+	
+	    $from    = Carbon::parse($fromDate)
+	                         ->startOfDay()        // 2018-09-29 00:00:00.000000
+	                         ->toDateTimeString(); // 2018-09-29 00:00:00
+	
+	    $to      = Carbon::parse($toDate)
+	                     ->endOfDay()          // 2018-09-29 23:59:59.000000
+	                      ->toDateTimeString(); // 2018-09-29 23:59:59
+	
+	    if($fromDate || $toDate) {
+	        // $models  = Model::whereBetween('created_at', [$from, $to])->get();
+	        //$getmonths= DB::table('Financial_Year') ->whereRaw('"'.$dt.'" between `start_date` and `End_date`')->get();
+	
+	     return DB::select('select COUNT(*) as cnt, SUM(tovar_price) as price from orders where shop_id = ? and status = 1 and created_at BETWEEN ? AND ?', [$this->id, $from, $to ]);
+	
+	    }
 
-        $from    = Carbon::parse($fromDate)
-                             ->startOfDay()        // 2018-09-29 00:00:00.000000
-                             ->toDateTimeString(); // 2018-09-29 00:00:00
-
-        $to      = Carbon::parse($toDate)
-                         ->endOfDay()          // 2018-09-29 23:59:59.000000
-                          ->toDateTimeString(); // 2018-09-29 23:59:59
-
-        if($fromDate || $toDate) {
-            // $models  = Model::whereBetween('created_at', [$from, $to])->get();
-            //$getmonths= DB::table('Financial_Year') ->whereRaw('"'.$dt.'" between `start_date` and `End_date`')->get();
-
-         return DB::select('select COUNT(*) as cnt, SUM(tovar_price) as price from orders where shop_id = ? and status = 1 and created_at BETWEEN ? AND ?', [$this->id, $from, $to ]);
-
-        }
-
-
-
-        return DB::select('select COUNT(*) as cnt, SUM(tovar_price) as price from orders where shop_id = ? and status = 1 and created_at > ?', [$this->id, Carbon::today()->toDateTimeString() ]);
+	    return DB::select('select COUNT(*) as cnt, SUM(tovar_price) as price from orders where shop_id = ? and status = 1 and created_at > ?', [$this->id, Carbon::today()->toDateTimeString() ]);
 
     }
 

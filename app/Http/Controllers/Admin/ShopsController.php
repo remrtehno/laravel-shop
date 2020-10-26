@@ -52,6 +52,8 @@ class ShopsController extends Controller
 
         $this->validate($request, [
             'title' =>'required',
+	          'phone' => 'required',
+	          'address' => 'required',
         ]);
 
         $prod->uploadImage($request->file('img'));

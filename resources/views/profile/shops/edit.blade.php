@@ -45,7 +45,7 @@
                                
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Координаты на карте</label>
                                     <input type="text" value="{{$sl->map }}" class="form-control" placeholder="41.77382, 60.883214" id="exampleInputEmail1" placeholder="" name="map">
@@ -53,6 +53,15 @@
 
                                
                             </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Телефон</label>
+                                <input type="text" value="{{$sl->phone }}" class="form-control" placeholder="+998901232323" id="exampleInputEmail1" placeholder="" name="phone">
+                            </div>
+
+
+                        </div>
 
                              <div class="form-group col-md-12">
                                 <img src="{{ $sl->getImage() }}" alt="" width="200">

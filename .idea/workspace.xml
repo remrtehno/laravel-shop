@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bde4844-c0c5-4438-bf3e-eae0c8a5dbd6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.cpanel.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.cpanel.yml" afterPath="$PROJECT_DIR$/.cpanel.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +54,8 @@
       <file leaf-file-name=".cpanel.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.cpanel.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="51">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -280,12 +280,12 @@
       <workItem from="1603531960152" duration="549000" />
       <workItem from="1603555875397" duration="14705000" />
       <workItem from="1603710476052" duration="1491000" />
-      <workItem from="1603778414697" duration="877000" />
+      <workItem from="1603778414697" duration="1007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125564000" />
+    <option name="totallyTimeSpent" value="125694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />
@@ -729,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.cpanel.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        <state relative-caret-position="51">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>

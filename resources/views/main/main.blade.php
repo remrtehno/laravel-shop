@@ -29,6 +29,9 @@
             media="all"
         />
         <style>
+            .slider-range-box #slider-range{
+                border: 0;
+            }
            .title-company-info {
   font-size: 18px;
   font-weight: 400;
@@ -82,7 +85,7 @@
               font-weight: 500;
               font-size: 14px;
             }
-            .ui-widget.ui-widget-content {
+            body > .ui-widget.ui-widget-content {
                 border: 0 !important;
             }
             .product-item h4.product-title {
@@ -254,7 +257,7 @@ a.logo, .all_categories_btn {
   top: 0;
   bottom: 0;
           }
-          .ui-widget.ui-widget-content {
+body >           .ui-widget.ui-widget-content {
 
   min-width: 395px;
   margin-left: -60px;
@@ -405,17 +408,14 @@ a.logo, .all_categories_btn {
                         <div class="col-md-3">
                             <h4>Контакты</h4>
                             <p>
-                                <a href="tel:+998712093332">
-                                    +998 (71) 123-45-56
+                                <a href="tel:{{$footer_contacts->phone}}">
+                                    {{$footer_contacts->phone}}
                                 </a>
-                                <a href="tel:+998712003332">
-                                    +998 (71) 123-45-56
-                                </a>
+
                                 <span>
-                                    г.Ташкент,Юнусабадский район, ул. Магазина.
-                                    Дом .
+                                    {{$footer_contacts->address}}
                                 </span>
-                                <a href="mailto:info@">info@site.uz</a>
+                                <a href="mailto:{{$footer_contacts->email}}">{{$footer_contacts->email}}</a>
                             </p>
                         </div>
                     </div>

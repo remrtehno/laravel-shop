@@ -32,10 +32,12 @@ class MainController extends Controller
         $productsSale = Product::where('is_sale', 1)->skip(0)->take(6)->get();
         $video = Video::limit(8)->get();
         $product_cats = ProdCat::all();
-
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
+	
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
 
 
         return view("index.index",compact('slider','product_cats', 'userwrap','about','gallery','news','products','productsHits','productsSale','video',
@@ -49,9 +51,11 @@ class MainController extends Controller
         $cat = ProdCat::getCategory();
 
 
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
+        $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+        $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+        $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
 
         return view("products.index",compact('products','cat','title','meta_key','meta_desc'));
     }
@@ -59,12 +63,15 @@ class MainController extends Controller
     public function shops() {
         $shops = Shops::all();
         $cat = ProdCat::getCategory();
-
-
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
-        return view("shops.index",compact('shops','cat','title','meta_key','meta_desc'));
+	
+	
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
+	
+	    return view("shops.index",compact('shops','cat','title','meta_key','meta_desc'));
     }
 
     public function shopsdetail($slug) {
@@ -74,11 +81,14 @@ class MainController extends Controller
 
         $cat = ProdCat::getCategory();
         $shop_products = Product::where('shop_id', $shop->id )->get();
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
-
-        return view("shops.detail",compact('cat','shop','shop_products','products','poductCat','title','meta_key','meta_desc'));
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
+	
+	
+	    return view("shops.detail",compact('cat','shop','shop_products','products','title','meta_key','meta_desc'));
     }
 
     public function category($slug){
@@ -168,11 +178,14 @@ class MainController extends Controller
         $news = News::all();
         $order = News::orderBy('created_at','desc')->take(3)->get();
         $gallery = Gallery::limit(9)->get();
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
-
-        return view("news.index",compact('news','order','gallery','title','meta_key','meta_desc'));
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
+	
+	
+	    return view("news.index",compact('news','order','gallery','title','meta_key','meta_desc'));
     }
 
     public function about(){
@@ -222,12 +235,15 @@ class MainController extends Controller
     public function orders(){
         $user = Auth::user();
         $orders = Order::where('user_id', '=', $user->id)->get();
-
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
-        
-      return view("orders.index", compact('title','meta_key','meta_desc', 'user', 'orders','products'));
+	
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
+	
+	
+	    return view("orders.index", compact('title','meta_key','meta_desc', 'user', 'orders','products'));
     }
 
     public function sale_hits_products($slug) {
@@ -236,11 +252,14 @@ class MainController extends Controller
         $products = Product::where("is_$slug", 1)->paginate(18);
         $id = 0;
         $cat = ProdCat::getCategory();
-        $title = "";
-        $meta_desc = "";
-        $meta_key = "";
-
-        return view("products.sale-hits",compact('products','cat','title','meta_key','meta_desc', 'id'));
+	    $title = "integ.uz, стройматериалы, в Ташкенте Узбекистан, лучшие товары по низким ценам, Нужны стройматериалы? Покупай у Integ.uz, экономь с нами";
+	    $meta_desc = "Если вам нужны стройматериалы,то integ.uz предлагает стройматериалы высокого качества в Ташкенте и по Узбекистану,у нас самые низкие цены в Ташкенте.Купить стройматериалы
+         в Ташкенте по низким ценам,только у нас самые низкие цены на
+        стройматериалы";
+	    $meta_key = "стройматериалы,шпатель,разбавитель, краска, лакокраска, кисти, ,купить в Ташкенте,стройматериалы по низким ценам в Ташкенте,Ташкент,Узбекистан";
+	
+	
+	    return view("products.sale-hits",compact('products','cat','title','meta_key','meta_desc', 'id'));
 
     }
 

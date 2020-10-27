@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contact;
+use App\News;
 use Illuminate\Support\Facades\View;
 use App\Logo;
 use App\Product;
@@ -28,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
             $view->with('users', User::all());
         });
+	
+	    view()->composer('*', function($view){
+		    $view->with('footer_contacts', Contact::find(1));
+	    });
 
         
 

@@ -16,13 +16,13 @@
                         <h5>{{$shop->title}}</h5>
                     
                     <p></p>
-                    <h5 class="title">О бренде</h5>
+                    <h5 class="title">@lang('home.about_shop')</h5>
                     <p></p>
                     <div class="shop-description">
                         {!! $shop->anonce !!}
                     </div><!-- /.shop-description -->
                     <p></p>
-                    <h5 class="title-address">Адрес магазина:</h5>
+                    <h5 class="title-address">@lang('home.address_shop'):</h5>
                     <div class="address">
                         {!! $shop->address !!}
                     </div><!-- /.address -->
@@ -52,9 +52,14 @@
                                                                     </div>
                                                                     <h4 class="product-title">{{$val->title}}</h4>
                                                                     <div class="product__price clearfix"> 
-                                                                        <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                                        <strong> {{$val->price}} <span>
+@lang('home.sumPerOne')
+</span>
+                                                                         </strong> 
                                                                 </div>
-                                                                <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> В корзину </button> </div>
+                                                                <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> 
+                                                                    @lang('home.tobasket')
+                                                                 </button> </div>
                                                             </a> </div>
                                                     </div>
                                                 </div>
@@ -82,7 +87,9 @@
                             <section class="products-container products-slider similar-products show">
                                 <div class="row">
                                     <div class="small-12">
-                                        <h4 class="section-title beauty-title">Каталог лучших предложений</h4>
+                                        <h4 class="section-title beauty-title">
+                                            @lang('home.catalog_best')
+                                        </h4>
                                         <div>
                                             <section class="products-container products-container-wrap">
                                                 <div class="row small-up-2 medium-up-4 large-up-6" style="padding-left: 15px; padding-right: 15px">
@@ -101,9 +108,11 @@
                                                                     </div>
                                                                     <h4 class="product-title">{{$val->title}}</h4>
                                                                     <div class="product__price clearfix"> 
-                                                                        <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                                        <strong> {{$val->price}} 
+                                                                           <span>@lang('home.sumPerOne')</span> 
+                                                                         </strong> 
                                                                 </div>
-                                                                <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> В корзину </button> </div>
+                                                                <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> @lang('home.tobasket') </button> </div>
                                                             </a> </div>
                                                     </div>
                                                 </div>

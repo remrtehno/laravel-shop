@@ -13,7 +13,9 @@
             <section class="user-cabinet beauty-wrapper">
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> Мой профиль </h1>
+                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> 
+                        @lang('home.profile_my')
+                    </h1>
                 </div>
 
                   <div class="small-12 medium-3 columns">
@@ -22,7 +24,9 @@
 
                 <div class="small-12 medium-9 columns details">
                      <div class="form-group">
-                        <a href="{{ route('seller-shops.create') }}" class="btn btn-success">Добавить</a>
+                        <a href="{{ route('seller-shops.create') }}" class="btn btn-success">
+                             @lang('home.add')
+                        </a>
                     </div>
                     <br>
 
@@ -32,9 +36,13 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th width="200">Магазин</th>
-                                    <th>Описание</th>
-                                    <th>Действия</th>
+                                    <th width="200">
+                                        @lang('home.profile_shops')
+                                    </th>
+                                    <th>
+                                        @lang('home.orders_desc')
+                                    </th>
+                                    <th>@lang('home.orders_actions')</th>
                                 </tr>
                             </thead>
                             <tbody>

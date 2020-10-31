@@ -10,7 +10,9 @@ class MainController extends Controller
 {
     public function index(){
 
-
+        $title = 'Личный кабинет';
+        $meta_key = 'Личный кабинет';
+        $meta_desc = 'Личный кабинет';
 
         $user = Auth::user();
       return view("profile.index.index", compact('title','meta_key','meta_desc', 'user'));
@@ -19,7 +21,7 @@ class MainController extends Controller
     public function watchlist(){
 
 
-				//recentviews store in cookie
+                //recentviews store in cookie
         if(array_key_exists('recentviews', $_COOKIE)) {
             $cookie = $_COOKIE['recentviews'];
             $cookie = unserialize($cookie);
@@ -28,7 +30,9 @@ class MainController extends Controller
         }
 
 
-       
+        $title = 'Личный кабинет';
+        $meta_key = 'Личный кабинет';
+        $meta_desc = 'Личный кабинет';
 
         $products = Product::whereIn('id', $cookie)->get();
         //recent view

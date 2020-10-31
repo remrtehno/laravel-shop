@@ -1,8 +1,12 @@
 <header id="header" class="header-wrap">
+   
         <div class="hdr_top">
             <div class="container">
                 <div class="hdr_top_main">
                     <div class="hdr_top_right">
+                        <a href="">
+                             @include('locales.locale')
+                        </a>
                         <a href="{{ route('all-shops') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                                 <g>
@@ -11,25 +15,26 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span>Магазины</span>
+                            <span>@lang('home.shop')</span>
                         </a>
+                  
                         <a href="/services">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14.666" height="13.333" viewBox="0 0 14.666 13.333">
                                 <path id="Combined_Shape" data-name="Combined Shape" d="M10,13.333H2a2,2,0,0,1-2-2V4.667a2,2,0,0,1,2-2H4V2A2,2,0,0,1,6,0H8.666a2,2,0,0,1,2,2v.667h2a2,2,0,0,1,2,2v6.667a2,2,0,0,1-2,2ZM12.667,12a.667.667,0,0,0,.667-.667V4.667A.667.667,0,0,0,12.667,4h-2v8ZM9.334,12V4h-4v8Zm-8-7.333v6.667A.667.667,0,0,0,2,12H4V4H2A.667.667,0,0,0,1.333,4.667Zm8-2V2a.667.667,0,0,0-.667-.667H6A.667.667,0,0,0,5.333,2v.667Z"></path>
                             </svg>
-                            <span>Услуги</span>
+                            <span>@lang('home.services')</span>
                         </a>
                         <a href="/blogs/list">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14.663" height="14.672" viewBox="0 0 14.663 14.672">
                                 <path id="Combined_Shape" data-name="Combined Shape" d="M.195,14.477a.667.667,0,0,1,0-.943l1.8-1.8V6.339a.663.663,0,0,1,.2-.472l4.5-4.5a4.669,4.669,0,0,1,6.6,6.6L8.805,12.476a.664.664,0,0,1-.472.2H2.943l-1.8,1.8a.667.667,0,0,1-.943,0Zm7.862-3.138,1.329-1.333H5.609L4.276,11.339ZM7.638,2.31l-4.3,4.305V10.4l6.2-6.2a.667.667,0,0,1,.943.943L6.942,8.672h3.724l.047,0,1.641-1.646A3.336,3.336,0,1,0,7.638,2.31Z"></path>
                             </svg>
-                            <span>Блог</span>
+                            <span>@lang('home.blog')</span>
                         </a>
                         <a href="/help">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14.666" height="14.666" viewBox="0 0 14.666 14.666">
                                 <path id="Combined_Shape" data-name="Combined Shape" d="M2.148,12.518a7.333,7.333,0,1,1,10.37-10.37,7.333,7.333,0,1,1-10.37,10.37Zm5.185.815a5.972,5.972,0,0,0,3.743-1.314L9.171,10.113a3.327,3.327,0,0,1-3.675,0L3.59,12.019A5.972,5.972,0,0,0,7.333,13.333Zm-6-6a5.972,5.972,0,0,0,1.314,3.743L4.553,9.171a3.328,3.328,0,0,1,0-3.674L2.647,3.59A5.972,5.972,0,0,0,1.333,7.333Zm10.686,3.743a5.989,5.989,0,0,0,0-7.486L10.113,5.5a3.327,3.327,0,0,1,0,3.675ZM5.333,7.333a2,2,0,1,0,2-2A2,2,0,0,0,5.333,7.333ZM5.5,4.553a3.328,3.328,0,0,1,3.674,0l1.906-1.906a5.989,5.989,0,0,0-7.487,0Z"></path>
                             </svg>
-                            <span>Помощь</span>
+                            <span>@lang('home.help')</span>
                         </a>
                         @if(Cart::count())
                         <a href="{{route('cart')}}" style=" position: relative;">
@@ -50,7 +55,7 @@
                     <span class="all_categories_btn">
                         <picture>
                             <source srcset="/public/assets/img/category_icon.svg" type="image/webp"><img src="/public/assets/img/category_icon.svg" alt="category_icon" /></picture>
-                        Все категории
+                        @lang('home.allCats')
                     </span>
                     <form onsubmit="e.preventDefault()" class="search_form_header" method="get">
                         <button type="submit">
@@ -58,7 +63,7 @@
                                 <source srcset="/public/assets/img/search.svg" type="image/webp"><img src="/public/assets/img/search.svg" alt="search" />
                             </picture>
                         </button>
-                        <input type="text" name="query" id="text" class="typeahead" required="" placeholder="Поиск объявлений" value="" />
+                        <input type="text" name="query" id="text" class="typeahead" required="" placeholder="@lang('home.search')" value="" />
                     </form>
 
 
@@ -70,13 +75,13 @@
                             <picture>
                                 <source srcset="/public/assets/img/user_plus.svg" type="image/webp"><img src="/public/assets/img/user_plus.svg" alt="user_plus" />
                             </picture>
-                            <span>Войти</span>
+                            <span>@lang('home.login')</span>
                         </a>
                     @else
                          <div class="dropdown us_drop">
                           <button class="dropbtn">
                             <i class="fas fa-user"></i>
-                                Привет, {{ Auth::user()->name }}
+                                @lang('home.hi'), {{ Auth::user()->name }}
                             </button>
                           <div class="dropdown-content">
 
@@ -103,7 +108,7 @@
                                                onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
                                 <i style="font-size: 16px; color: green; vertical-align: middle; margin-right: 10px;" class="fas fa-sign-out-alt"></i>
-                                <span>Выйти</span>
+                                <span>@lang('home.logout')</span>
                             </a>
 
                             
@@ -119,7 +124,8 @@
                         <picture>
                             <source srcset="/public/assets/img/plus_circle.svg" type="image/webp"><img src="/public/assets/img/plus_circle.svg" alt="plus_circle" />
                         </picture>
-                        открыть магазин
+                        @lang('home.openShop')
+                        
                     </a>
                 </div>
                 <div class="toggle-menu-mobile">
@@ -136,7 +142,8 @@
             <div class="swipe-menu-container">
                 <div class="swipe-menu-header">
                     <div class="reveal-header">
-                        <h4>Категории продуктов</h4> <button class="close-button" aria-label="Close modal"><span aria-hidden="true">×</span></button>
+
+                        <h4>@lang('home.catProducts') </h4> <button class="close-button" aria-label="Close modal"><span aria-hidden="true">×</span></button>
                     </div>
                 </div>
                 <div class="swipe-menu-body">

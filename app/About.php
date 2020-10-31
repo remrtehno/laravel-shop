@@ -13,7 +13,7 @@ class About extends Model
 
 
 
-    public static function add($fields)
+    public static function add($fields) 
     {
         $post = new static;
         $post->fill($fields);

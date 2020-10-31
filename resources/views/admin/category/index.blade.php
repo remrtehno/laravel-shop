@@ -36,6 +36,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Название</th>
+                            <th>Название EN</th>
+                            <th>Название UZ</th>
                             <th> IMG </th>
                             <th>Действия</th>
                         </tr>
@@ -47,6 +49,8 @@
     <tr>
         <td>{{ $item->id }}</td>
         <td>{{ $item->title }}</td>
+         <td>{{ $item->title_en }}</td>
+          <td>{{ $item->title_uz }}</td>
         <td><img src="{{ $item->getImage() }}" height="50" ></td>
 
 

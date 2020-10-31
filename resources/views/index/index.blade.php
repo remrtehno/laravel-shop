@@ -34,7 +34,7 @@
                                 <a href="{{route('category',['slug'=>$cat->slug])}}">
                                     <img src="{{ $cat->getImage() }}" alt="" />
 
-                                    <p>{{$cat->title}}</p>
+                                    <p>{{$cat->getTitle()}}</p>
                                 </a> 
                             </div>
                             @endforeach
@@ -48,8 +48,8 @@
                 <section class="products-container products-slider IS_BEST_OFFER_ProductCarousel show">
                     <div class="row">
                         <div class="small-12">
-                            <h4 class="section-title"> Каталог лучших предложений
-                             <a class="button btn-all-link" aria-current="false" href="{{route('products', ['slug' => 'hits'])}}"> Все
+                            <h4 class="section-title"> @lang('home.catalog_best') 
+                             <a class="button btn-all-link" aria-current="false" href="{{route('products', ['slug' => 'hits'])}}"> @lang('home.all') 
                                     <i class="fa fa-angle-right"></i>
                                 </a> </h4>
                             <div>
@@ -67,17 +67,22 @@
                                                     <div class="bottom">
                                                         <a class="clickable" aria-current="false" href="{{route('detail',['slug'=>$val->slug])}}">
                                                         <div class="product-image">
-                                                            <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> Подробнее</div>
+                                                            <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> @lang('home.detail') </div>
                                                             <img src="{{ $val->getImage() }}" class="product-img square-180" />
                                                         </div>
                                                         <h4 class="product-title">{{$val->title}}</h4>
                                                         <div class="product__price clearfix"> 
-                                                            <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                            <strong> {{$val->price}} <span>
+                                                                 <span>@lang('home.sumPerOne')</span> 
+                                                            </span>
+                                                        </strong>
                                                     </div>
                                                 </a>
 
                                                     <div class="add-cart horizontal cart-44732 wide-box not-added">
-                                                     <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$val->id])}}"></span> В корзину</a> </button> </div>
+                                                     <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$val->id])}}"></span>
+                                                        @lang('home.tobasket')
+                                                     </a> </button> </div>
                                                  </div>
                                         </div>
                                     </div>  <!-- column -->
@@ -97,9 +102,10 @@
                     <div class="row">
                         <div class="small-12">
                             <h4 class="section-title">
-                                Скидочные товары
+                                @lang('home.stocks')
+
                                 <a class="button btn-all-link" aria-current="false" href="{{route('products',['slug' => 'sale'])}}">
-                                    Все
+                                    @lang('home.all')
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </h4>
@@ -119,17 +125,20 @@
                                                     <div class="bottom">
                                                         <a class="clickable" aria-current="false" href="{{route('detail',['slug'=>$val->slug])}}">
                                                         <div class="product-image">
-                                                            <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> Подробнее</div>
+                                                            <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> @lang('home.detail')</div>
                                                             <img src="{{ $val->getImage() }}" class="product-img square-180" />
                                                         </div>
                                                         <h4 class="product-title">{{$val->title}}</h4>
                                                         <div class="product__price clearfix"> 
-                                                            <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                            <strong> {{$val->price}} 
+                                                                <span>@lang('home.sumPerOne')</span> 
+                                                            </strong>
+
                                                     </div>
                                                 </a>
 
                                                     <div class="add-cart horizontal cart-44732 wide-box not-added">
-                                                     <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$val->id])}}"></span> В корзину</a> </button> </div>
+                                                     <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$val->id])}}"></span> @lang('home.tobasket')</a> </button> </div>
                                                  </div>
                                         </div>
                                     </div>  <!-- column -->

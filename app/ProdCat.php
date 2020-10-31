@@ -11,12 +11,18 @@ class ProdCat extends Model
 {
     use Sluggable;
     protected  $table = "prod_cats";
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'title_en', 'title_uz'];
 
     public  function products(){
 
 
         return $this->hasMany("App\Product");
+    }
+
+    public function getTitle() {
+        if(app()->getLocale() == 'ru') return $this->title;
+        $lang = "title_".app()->getLocale();
+        return $this->{$lang};
     }
 
     public static function add($fields)

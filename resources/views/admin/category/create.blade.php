@@ -35,6 +35,16 @@
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Название EN</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title_en">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Название UZ</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title_uz">
+                                </div>
+
                                     <div class="form-group">
                                         <label for="exampleInputFile">Картинка</label>
                                         <input type="file" id="exampleInputFile" name="img">

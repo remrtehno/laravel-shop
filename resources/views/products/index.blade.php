@@ -7,11 +7,11 @@
     <div class="page_top_wrap page_top_title page_top_breadcrumbs" style="margin-top: 130px">
         <div class="content_wrap">
             <div class="breadcrumbs">
-                <a class="breadcrumbs_item home" href="/" title="Home">Главная</a>
+                <a class="breadcrumbs_item home" href="/" title="Home">@lang('home.main')</a>
                 <span class="breadcrumbs_delimiter"></span>
-                <span class="breadcrumbs_item current">продукция</span>
+                <span class="breadcrumbs_item current">@lang('home.products')</span>
             </div>
-            <h1 class="page_title">продукция</h1>
+            <h1 class="page_title">@lang('home.products')</h1>
         </div>
     </div>
 
@@ -55,8 +55,8 @@
 
 
                                                         <a href="{{ route('detail',['slug'=>$item->slug]) }}" class="sc_button sc_button_square sc_button_style_button-2 sc_button_bg_link sc_button_size_medium add_link" style="margin-right:15px; ">
-                                                            <span class="button-up">подробно</span>
-                                                            <span>подробно</span>
+                                                            <span class="button-up">@lang('home.dateil')</span>
+                                                            <span>@lang('home.detail')</span>
                                                         </a>
                                                     </div>
                                                 </div>

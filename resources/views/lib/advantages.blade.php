@@ -8,8 +8,10 @@
                         </picture>
                     </div>
                     <div class="info">
-                        <h6>Удобная доставка</h6>
-                        <p>Бесплатная доставка при <br>заказе от 500 000 сум</p>
+                        <h6>@lang('home.advantages_title_1')</h6>
+                         <p>
+                            @lang('home.advantages_desc_1')
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
@@ -19,8 +21,10 @@
                         </picture>
                     </div>
                     <div class="info">
-                        <h6>Оплата любым способом</h6>
-                        <p>5 способов оплаты для <br>твоего удобства</p>
+                        <h6>@lang('home.advantages_title_2')</h6>
+                        <p>
+                            @lang('home.advantages_desc_2')
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
@@ -30,8 +34,10 @@
                         </picture>
                     </div>
                     <div class="info">
-                        <h6>Качественное гарантийное <br>обслуживание</h6>
-                        <p>Поможем с ремонтом товара</p>
+                        <h6>@lang('home.advantages_title_3')</h6>
+                         <p>
+                            @lang('home.advantages_desc_3')
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
@@ -41,8 +47,10 @@
                         </picture>
                     </div>
                     <div class="info">
-                        <h6>Подарочные <br>сертификаты</h6>
-                        <p>Поможем с ремонтом товара</p>
+                        <h6>@lang('home.advantages_title_4')</h6>
+                         <p>
+                            @lang('home.advantages_desc_4')
+                        </p>
                     </div>
                 </div>
             </div>

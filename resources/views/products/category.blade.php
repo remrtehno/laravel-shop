@@ -15,7 +15,7 @@
                 <div class="small-12 medium-12">
                     <nav aria-label="You are here:" role="navigation" style="position: relative">
                         <ul class="breadcrumbs">
-                            <li> <a href="/">Главная </a> </li>
+                            <li> <a href="/">@lang('home.main') </a> </li>
 
                             <li> <a href="{{route('category',['slug'=>$id->slug])}}">{{$id->title}} </a> </li>
 
@@ -27,7 +27,7 @@
                     <div class="facet-filter-wrap">
                         <div class="facet-box categories-facet-box">
                             <div class="facet-box__header">
-                                <h4 class="facet-box__title"> <span class="text">Категории</span> <span class="toggle-btn">                      <i class="fa fa-angle-down"></i>                    </span> </h4>
+                                <h4 class="facet-box__title"> <span class="text">@lang('home.cats')</span> <span class="toggle-btn">                      <i class="fa fa-angle-down"></i>                    </span> </h4>
                             </div>
                             <div class="facet-box__body">
                                 <div class="product-filter-menu">
@@ -49,7 +49,7 @@
 
  <div class="facet-box price-range-facet">
                             <div class="facet-box__header">
-                                <h4 class="facet-box__title"> <span class="text">Цена в филиале</span> <span class="toggle-btn">                      <i class="fa fa-angle-down"></i>                    </span> </h4>
+                                <h4 class="facet-box__title"> <span class="text">@lang('home.branchPrice')</span> <span class="toggle-btn">                      <i class="fa fa-angle-down"></i>                    </span> </h4>
                             </div>
                             <div class="facet-box__body">
                                 <div>
@@ -80,7 +80,7 @@
             <a href="{{route('detail',['slug'=>$item->slug]) }}">
                 <div class="product-image"> 
                     <div class="overlay">
-                        <i class="fa fa-eye" aria-hidden="true"></i> Подробнее
+                        <i class="fa fa-eye" aria-hidden="true"></i> @lang('home.detail')
                     </div> 
                     <img src="{{ $item->getImage() }}" class="product-img square-180" /> 
                 </div>
@@ -96,7 +96,7 @@
             </div>
         </div> <!-- bottom -->
         <div class="add-cart horizontal cart-7286 wide-box not-added">
-            <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$item->id])}}"></span> В корзину</a> </button>
+            <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"><a style="color:white;" aria-current="false" href="{{route('add',['slug'=>$item->id])}}"></span> @lang('home.tobasket')</a> </button>
         </div> <!-- add-cart -->
     </div><!--  product-item -->
 </div> <!-- column -->
@@ -107,7 +107,7 @@
                            
                              @else
                                     <section class="lefd">
-                                        <h2>Продукции в данной категории нет!</h2>
+                                        <h2>@lang('home.nothing')</h2>
                                     </section>
                                 @endif
                         </section>

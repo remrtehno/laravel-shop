@@ -19,7 +19,7 @@
                                 <div class="wpb_wrapper">
                                 <p><p>{!! str_limit($item->anonce,350) !!}  </p></p>
                                 <a href="{{ route('shop-detail',['slug'=>$item->slug]) }}" class="sc_button sc_button_square sc_button_style_button-2 sc_button_bg_link sc_button_size_medium add_link">
-                                <span class="button-up">Подробно</span>
+                                <span class="button-up">@lang('home.detail')</span>
                                 <i class="fas fa-arrow-alt-circle-right" style="margin-left: 5px;"></i> 
                                 </a>
                             </div>

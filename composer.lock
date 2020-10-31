@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ab800db8a1ca30ed6d24c238b8bf04a",
+    "content-hash": "7dd903bc5dd2517c47020da2ed7fb091",
     "packages": [
         {
             "name": "bumbummen99/shoppingcart",
@@ -804,6 +804,56 @@
             "description": "Highlight PHP code in terminal",
             "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "klisl/laravel-locale",
+            "version": "1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/klisl/laravel-locale.git",
+                "reference": "dd963d3b447fa8281f9fc6148a04413b6d0dc250"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/klisl/laravel-locale/zipball/dd963d3b447fa8281f9fc6148a04413b6d0dc250",
+                "reference": "dd963d3b447fa8281f9fc6148a04413b6d0dc250",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.3",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Klisl\\Locale\\LocaleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Klisl\\Locale\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Klimenchuk",
+                    "email": "ksl80@ukr.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Creating a multilanguage for the site Laravel-5",
+            "keywords": [
+                "language",
+                "laravel",
+                "locale"
+            ],
+            "time": "2018-04-03T13:04:00+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4413,6 +4463,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

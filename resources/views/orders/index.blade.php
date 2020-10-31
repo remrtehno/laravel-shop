@@ -13,7 +13,9 @@
 <section class="user-cabinet beauty-wrapper">
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> Мой профиль </h1>
+                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only">
+                        @lang('home.profile_my')
+                    </h1>
                 </div>
                 <div class="small-12 medium-3 columns">
                     
@@ -23,15 +25,21 @@
                 </div>
                 <div class="small-12 medium-9 columns details">
                     <div class="latest-orders cabinet-block">
-                        <h4 class="widget-title">Заказы</h4>
+                        <h4 class="widget-title">
+                            @lang('home.orders')
+                        </h4>
                         <div class="score_main">
                            
                             <table class="score table">
                                 <thead>
                                     <tr>
-                                        <th>Имя товара</th>
-                                        <th>Цена</th>
-                                        <th>Статус</th>
+                                        <th>@lang('home.orders_name')</th>
+                                        <th>
+                                            @lang('home.orders_sum')
+                                        </th>
+                                        <th>
+                                            @lang('home.orders_status')
+                                        </th>
                                     </tr>
                                     @if($orders->count() > 0)
                                     @foreach($orders as $item)
@@ -44,7 +52,7 @@
 
                                     @endforeach
                                     @else
-                                        <tr><td>Пусто</td></tr>
+                                        <tr><td>@lang('home.nothing')</td></tr>
                                     @endif
                                 </thead>
                             </table>

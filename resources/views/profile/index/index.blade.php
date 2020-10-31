@@ -12,7 +12,7 @@
             <section class="user-cabinet beauty-wrapper">
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> Мой профиль </h1>
+                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> @lang('home.profile_my') </h1>
                 </div>
   <div class="small-12 medium-3 columns">
                 @include("profile.lib.left")
@@ -20,7 +20,7 @@
 
                 <div class="small-12 medium-9 columns details">
                     <div class="latest-orders cabinet-block">
-                        <h4 class="widget-title">Мой профиль</h4>
+                        <h4 class="widget-title">@lang('home.profile_my')</h4>
 
                         <form class="profile-form" method="post" action="{{route('users.update', $user)}}">
                             {{ csrf_field() }}

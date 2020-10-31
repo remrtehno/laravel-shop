@@ -12,7 +12,9 @@
             <section class="user-cabinet beauty-wrapper">
             <div class="row">
                 <div class="small-12 medium-12 columns">
-                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only"> Мой профиль </h1>
+                    <h1 class="title hide-for-small-only hide-for-medium-only hide-for-large-only">
+                        @lang('home.profile_my')
+                    </h1>
                 </div>
 
   <div class="small-12 medium-3 columns">
@@ -26,7 +28,9 @@
                 <!-- Default box -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Добавляем магазин</h3>
+                        <h3 class="box-title">
+                            @lang('home.shop_add')
+                        </h3>
                     </div>
 
 
@@ -36,7 +40,9 @@
                         <div class="box-body row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Название</label>
+                                    <label for="exampleInputEmail1">
+                                         @lang('home.name')
+                                    </label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
                                 </div>
 
@@ -47,7 +53,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Адрес</label>
+                                    <label for="exampleInputEmail1">
+                                        @lang('home.address')
+                                    </label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="address">
                                 </div>
 
@@ -56,7 +64,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Координаты на карте</label>
+                                    <label for="exampleInputEmail1">
+                                        @lang('home.map')
+                                    </label>
                                     <input type="text" class="form-control" placeholder="41.77382, 60.883214" id="exampleInputEmail1" placeholder="" name="map">
                                 </div>
 
@@ -65,7 +75,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Телефон</label>
+                                    <label for="exampleInputEmail1">
+                                      @lang('home.phone')  
+                                    </label>
                                     <input type="text" class="form-control" placeholder="+998901232323" id="exampleInputEmail1" placeholder="" name="phone">
                                 </div>
 
@@ -75,16 +87,21 @@
 
 
                              <div class="col-md-12">
-                                    <label for="exampleInputFile">Картинка</label>
+                                    <label for="exampleInputFile">
+                                           @lang('home.picture') 
+                                    </label>
                                     <input type="file" id="exampleInputFile" name="img">
 
                                     <p class="help-block">jpeg,png,jpeg</p>
-                                    <p class="help-block">размер 400x266</p>
+                                    <p class="help-block">
+                                     @lang('home.size')
+
+                                      400x266</p>
                                 </div>
 
  <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Описание</label>
+                                    <label for="exampleInputEmail1">@lang('home.orders_desc')</label>
                                     <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" ></textarea>
                                 </div>
                             </div>
@@ -104,7 +121,7 @@
 
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button class="btn btn-success pull-right" type="submit">Добавить</button>
+                        <button class="btn btn-success pull-right" type="submit">@lang('home.add')</button>
                     </div>
                     <!-- /.box-footer-->
                 </div>

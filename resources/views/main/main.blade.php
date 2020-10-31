@@ -339,15 +339,17 @@ body >           .ui-widget.ui-widget-content {
                                 id="bxdynamic_mKUqxK_start"
                                 style="display: none"
                             ></div>
-                            <h4>Компания</h4>
+                            <h4>@lang('home.footer_menu_title')</h4>
                             <ul>
-                                <li><a href="/company/">О компании</a></li>
-                                <li><a href="/company/news/">Новости</a></li>
+                                <li><a href="/company/">
+                                  @lang('home.about_company')
+                                </a></li>
+                                <li><a href="/company/news/">@lang('home.news')</a></li>
                                 <li>
-                                    <a href="/company/staff/">Сотрудники</a>
+                                    <a href="/company/staff/">@lang('home.employees')</a>
                                 </li>
                                 <li>
-                                    <a href="/company/vacancy/">Вакансии</a>
+                                    <a href="/company/vacancy/">@lang('home.vacancy')</a>
                                 </li>
                             </ul>
                             <div
@@ -360,20 +362,20 @@ body >           .ui-widget.ui-widget-content {
                                 id="bxdynamic_QCJ7Jg_start"
                                 style="display: none"
                             ></div>
-                            <h4>Помощь</h4>
+                            <h4>@lang('home.footer_menu_title_2')</h4>
                             <ul>
-                                <li><a href="/help/">Как купить</a></li>
+                                <li><a href="/help/">@lang('home.footer_menu_title_2')</a></li>
                                 <li>
-                                    <a href="/help/payment/">Условия оплаты</a>
+                                    <a href="/help/payment/">@lang('home.conditions_payments')</a>
                                 </li>
                                 <li>
                                     <a href="/help/delivery/">
-                                        Условия доставки
+                                        @lang('home.conditions_delivery')
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/help/warranty/">
-                                        Гарантия на товар
+                                        @lang('home.guarantee')
                                     </a>
                                 </li>
                             </ul>
@@ -387,16 +389,16 @@ body >           .ui-widget.ui-widget-content {
                                 id="bxdynamic_6G4w5O_start"
                                 style="display: none"
                             ></div>
-                            <h4>Информация</h4>
+                            <h4>@lang('home.footer_menu_title_3')</h4>
                             <ul>
-                                <li><a href="/info/brands/">Бренды</a></li>
+                                <li><a href="/info/brands/">@lang('home.brands')</a></li>
                                 <li>
-                                    <a href="/info/faq/">Вопросы и ответы</a>
+                                    <a href="/info/faq/">@lang('home.faq')</a>
                                 </li>
-                                <li><a href="/info/advice/">Советы</a></li>
+                                <li><a href="/info/advice/">@lang('home.advices')</a></li>
                                 <li>
                                     <a href="/company/suppliers/">
-                                        Поставщикам
+                                        @lang('home.for_suppliers')
                                     </a>
                                 </li>
                             </ul>
@@ -406,7 +408,7 @@ body >           .ui-widget.ui-widget-content {
                             ></div>
                         </div>
                         <div class="col-md-3">
-                            <h4>Контакты</h4>
+                            <h4>@lang('home.footer_menu_title_4')</h4>
                             <p>
                                 <a href="tel:{{$footer_contacts->phone}}">
                                     {{$footer_contacts->phone}}
@@ -423,115 +425,13 @@ body >           .ui-widget.ui-widget-content {
             </div>
             <div class="footer_bottom">
                 <div class="container">
-                    <p class="copy">© 2020 Site uz. Все права защищены.</p>
+                    <p style="float: left;" class="copy">© {{date('Y')}} {{$_SERVER['SERVER_NAME']}}. @lang('home.copyright')</p>
+                    <p style="float: right;">Разработано в <a href="http://steepcoder.uz/site" target="_blank" style="color: blue;">Steepcoder</a></p>
+                    <div style="clear: both;"></div>
                 </div>
             </div>
         </footer>
-        <!-- modals -->
-        <div id="modal-auth" class="mfp-hide modal-auth tiny center-position">
-            <div class="registration-container">
-                <div class="row">
-                    <div class="small-12 columns text-center">
-                        <h2 align="center">Регистрация</h2>
-                        <h5>
-                            Проверьте код страны и введите номер Вашего
-                            телефона.
-                        </h5>
-                    </div>
-                </div>
-                <div class="row align-center">
-                    <div class="small-12 columns">
-                        <form class="phone-login-form">
-                            <label class="country-select-box">
-                                <div
-                                    class="form-group has-feedback has-success"
-                                >
-                                    <div
-                                        class="Select has-value is-clearable is-searchable Select--single"
-                                    >
-                                        <select
-                                            class="Select-control Select-value"
-                                            name="country"
-                                        >
-                                            <option value="0">
-                                                Узбекистан
-                                            </option>
-                                            <option value="0">
-                                                Узбекистан
-                                            </option>
-                                            <option value="0">
-                                                Узбекистан
-                                            </option>
-                                            <option value="0">
-                                                Узбекистан
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="country-code-box">
-                                <div
-                                    class="form-group has-feedback has-success"
-                                >
-                                    <div class="form-field">
-                                        <input
-                                            name="countryCode"
-                                            maxlength="255"
-                                            class="input-field"
-                                            type="hidden"
-                                            value="998"
-                                        />
-                                        <div
-                                            class="mask-field country-code-field no-mask full"
-                                        >
-                                            <input
-                                                type="text"
-                                                placeholder="+"
-                                                class="text-field"
-                                                value="+998"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <label class="phone-box">
-                                <div
-                                    class="form-group has-feedback has-success"
-                                >
-                                    <div class="form-field">
-                                        <input
-                                            name="phoneNumber"
-                                            maxlength="255"
-                                            class="input-field"
-                                            type="hidden"
-                                            value=""
-                                        />
-                                        <div
-                                            class="mask-field phone-number-field no-mask empty"
-                                        >
-                                            <input
-                                                type="text"
-                                                placeholder="Номер телефона"
-                                                class="text-field"
-                                                value=""
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </label>
-                            <button
-                                type="submit"
-                                class="expanded success button"
-                            >
-                                Отправить
-                            </button>
-                        </form>
-                    </div>
-                    <div class="small-12"></div>
-                </div>
-            </div>
-        </div>
-        <!-- modal-auth -->
+
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <script src="/public/assets/js/script.js"></script>
         <script src="/public/assets/js/jquery-ui.js"></script>

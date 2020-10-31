@@ -33,6 +33,14 @@
                                 <label for="exampleInputEmail1">Имя</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $cat->title }}" name="title">
                             </div>
+                             <div class="form-group">
+                                <label for="exampleInputEmail1">Имя EN</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $cat->title_en }}" name="title_en">
+                            </div>
+                             <div class="form-group">
+                                <label for="exampleInputEmail1">Имя UZ</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $cat->title_uz }}" name="title_uz">
+                            </div>
  <div class="form-group">
                                         <label for="exampleInputFile">Картинка</label>
                                         <input type="file" id="exampleInputFile" name="img">

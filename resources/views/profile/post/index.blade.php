@@ -9,6 +9,11 @@
 
 
 @section('content')
+<style>
+    .score_main {
+        overflow: auto;
+    }
+</style>
 
             <section class="user-cabinet beauty-wrapper">
             <div class="row">
@@ -22,7 +27,9 @@
 
                 <div class="small-12 medium-9 columns details">
                      <div class="form-group">
-                        <a href="{{ route('products.create') }}" class="btn btn-success">Добавить</a>
+                        <a href="{{ route('products.create') }}" class="btn btn-success">
+                            @lang('home.add')
+                        </a>
                     </div>
                     <br>
 
@@ -32,12 +39,12 @@
                                 <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>Название</th>
-                                        <th>Описание</th>
-                                        <th>Сумма</th>
-                                        <th>Статус</th>
-                                        <th>Тип</th>
-                                        <th>Действия</th>
+                                        <th>@lang('home.orders_name')</th>
+                                       
+                                        <th>@lang('home.orders_sum')</th>
+                                        <th>@lang('home.orders_status')</th>
+
+                                        <th>@lang('home.orders_actions')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,10 +53,10 @@
                                     <tr>
                                         <td>{{$item->id}}</td>
                                         <td><a target="_blank" href="{{ route('detail',['slug'=>$item->slug]) }}"><span style="color: blue;">{{$item->title}}</span></a></td>
-                                        <td>{!!$item->text!!}</td>
+
                                         <td>{{$item->price}}</td>
                                         <td>{{$item->label}}</td>
-                                        <td>БУДЕТ ИЗ ЗАКАЗОВ</td>
+
                                         <td>
 
 
@@ -73,7 +80,9 @@
                                         <td colspan="6">
                                             <div class="free_score">
                                                 <p></p>
-                                                <h3 align="center">Нет данных</h3>
+                                                <h3 align="center">
+                                                    @lang('home.nothing')
+                                                </h3>
                                             </div>
                                         </td>
                                     </tr>

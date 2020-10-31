@@ -10,7 +10,7 @@
                 <div class="small-12 medium-12 columns">
                     <nav style="position:relative">
                         <ul class="breadcrumbs">
-                            <li> <a href="/">Главная </a> </li>
+                            <li> <a href="/">@lang('home.main')  </a> </li>
                             <li> <a href="{{route('category',['slug'=>$poductCat->slug]) }}">{{$poductCat->title}}</a> </li>
                             <li> <a>{{$product->title}} </a> </li>
                         </ul>
@@ -49,19 +49,19 @@
                                 <div class="product__price">
                                     @if($product->label)
                                         <div style="display: inline-block; background: red; font-size: 16px; color: white; padding: 5px 10px;
-                                              "> Скидка {{$product->label}} %</div>
+                                              "> @lang('home.sale') {{$product->label}} %</div>
                                     @endif
                                     <p></p>
                                     <strong>
                                         {{ $product->price }}  <span>сум.</span>
-                                    </strong> <span class="small__text">за<!-- --> 1<!-- -->шт </span> </div>
+                                    </strong> <span class="small__text">@lang('home.sumPerOne') </span> </div>
 
                                 <div class="row">
                                     <div class="small-12 medium-12 columns main-buttons">
                                         <div class="clearfix">
                                             <div class="add-cart horizontal cart-41908                              wide-box not-added">
                                                 <a href="{{ route('add', [ 'id' => $product->id ]) }}">
-                                                    <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> <!-- -->В корзину </button>
+                                                    <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> @lang('home.tobasket') </button>
 
                                                 </a> </div>
                                         </div>
@@ -78,13 +78,13 @@
                         @if($product->getShopByProduct())
                             <div class="small-12 medium-3 columns">
                                 <div class="product-right product_company_info h-100" style="  max-width: 100%;">
-                                    <h3 class="h3 title-company-info">Контакты</h3>
+                                    <h3 class="h3 title-company-info">@lang('home.contacts')</h3>
                                     <a  class="product-right-title">
 
-                                        Адрес: <b>{{$contacts->address}}</b>
+                                        @lang('home.address'): <b>{{$contacts->address}}</b>
                                     </a>
                                     <div class="mer-lname">
-                                        Телефон: <a href="tel:{{$contacts->phone}}"> {{$contacts->phone}} </a> <br>
+                                        @lang('home.phone'): <a href="tel:{{$contacts->phone}}"> {{$contacts->phone}} </a> <br>
                                         Email: <a href="mailto:{{$contacts->email}}"> {{$contacts->email}} </a>
 
                                     </div>
@@ -110,7 +110,7 @@
                                 <section class="products-container products-slider similar-products show">
                                     <div class="row">
                                         <div class="small-12">
-                                            <h4 class="section-title beauty-title">Каталог лучших предложений</h4>
+                                            <h4 class="section-title beauty-title">@lang('home.catalog_best')</h4>
                                             <div>
                                                 <section class="products-container products-container-wrap">
                                                     <div class="row small-up-2 medium-up-4 large-up-6" style="padding-left: 15px; padding-right: 15px">
@@ -129,9 +129,9 @@
                                                                             </div>
                                                                             <h4 class="product-title">{{$val->title}}</h4>
                                                                             <div class="product__price clearfix">
-                                                                                <strong> {{$val->price}} <span>сум. за</span> <span class="unit-text">1 шт</span> </strong> <span class="small__text hide">( 4 990 сум. за 1 шт )</span>
+                                                                                <strong> {{$val->price}} <span>@lang('home.sumPerOne')</span>
                                                                             </div>
-                                                                            <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span> В корзину </button> </div>
+                                                                            <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span>@lang('home.tobasket')</button> </div>
                                                                     </a> </div>
                                                             </div>
                                                     </div>

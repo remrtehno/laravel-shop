@@ -34,9 +34,9 @@ Route::get('/products/{slug}', "MainController@sale_hits_products")->name('produ
 
 
 Route::group(['prefix'=>'profile','namespace'=>'Profile','middleware'=>['auth']], function(){
-    Route::get('/', 'MainController@index');
+    Route::get('/', 'MainController@index')->name('profile-index');
     Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
-    Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+    Route::post('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
     Route::resource('products','ProductController');
     Route::resource('seller-shops', 'ShopsController');
 

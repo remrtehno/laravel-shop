@@ -51,7 +51,7 @@
         <div class="container">
             <div class="hdr_bottom_main">
                 <div class="hdr_bottom_main_left">
-                    <a href="{{ url('/') }}" class="logo"><img src="/public/uploads/logo/logo.png" /></a>
+                    <a href="{{ route('index') }}" class="logo"><img src="/public/uploads/logo/logo.png" /></a>
                     <span class="all_categories_btn">
                         <picture>
                             <source srcset="/public/assets/img/category_icon.svg" type="image/webp"><img src="/public/assets/img/category_icon.svg" alt="category_icon" /></picture>
@@ -70,7 +70,7 @@
 
                 </div>
                 <div class="hdr_bottom_main_right">
-                    @guest 
+                   @if(!Auth::check())
                         <a href="{{ route('login') }}" class="enter_site">
                             <picture>
                                 <source srcset="/public/assets/img/user_plus.svg" type="image/webp"><img src="/public/assets/img/user_plus.svg" alt="user_plus" />
@@ -119,14 +119,24 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                    @endguest
+                  
+                    
+                    
+                    @if(Auth::user()->role == "seller")
+
                     <a href="{{ route('seller-shops.create') }}" class="add_ads">
                         <picture>
                             <source srcset="/public/assets/img/plus_circle.svg" type="image/webp"><img src="/public/assets/img/plus_circle.svg" alt="plus_circle" />
                         </picture>
                         @lang('home.openShop')
-                        
                     </a>
+                    @else
+                    
+                    @endif
+                    
+                    
+                    
+                      @endif
                 </div>
                 <div class="toggle-menu-mobile">
                     <span></span>
@@ -152,7 +162,7 @@
                             @foreach($product_cats as $item)
                             <li role="menuitem"> 
                                 <a class="" data-add="{{$item->slug}}" aria-current="false" href="{{route('category', ['slug' => $item->slug]) }}">
-                                    <img src="{{$item->getImage()}}" alt="" class="category-image"> <span>{{$item->title}}</span>
+                                    <img src="{{$item->getImage()}}" alt="" class="category-image"> <span>{{$item->getTitle()}}</span>
                                 </a> 
                             </li>
                            @endforeach

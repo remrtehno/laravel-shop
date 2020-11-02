@@ -14,7 +14,8 @@ class Shops extends Model
     //
     use Sluggable;
     protected $table = "shops";
-    protected $fillable =['title','anonce','phone','user_id','img', 'address', 'map'];
+    protected $fillable =['title','title_en','title_uz','anonce','phone','user_id','img', 'address', 'map'];
+
 
 
     public function removeImage()
@@ -25,6 +26,12 @@ class Shops extends Model
     public  function products(){
 
         return $this->belongsTo("App\Product",'id','shop_id');
+    }
+
+    public function getTitle() {
+        if(app()->getLocale() == 'ru') return $this->title;
+        $lang = "title_".app()->getLocale();
+        return $this->{$lang};
     }
 
     public  function statistics(){

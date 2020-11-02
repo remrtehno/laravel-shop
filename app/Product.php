@@ -13,7 +13,14 @@ class Product extends Model
 {
     use Sluggable;
     protected  $table = "products";
-    protected $fillable =['title','anonce','price','user_id','is_sale','is_hits','shop_id','label','text','created_at','meta_desc','meta_key'];
+    protected $fillable =['title','title_en','title_uz','anonce','price','user_id','is_sale','is_hits','shop_id','label','text','created_at','meta_desc','meta_key'];
+
+
+    public function getTitle() {
+        if(app()->getLocale() == 'ru') return $this->title;
+        $lang = "title_".app()->getLocale();
+        return $this->{$lang};
+    }
 
     public  function category(){
 

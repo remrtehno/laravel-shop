@@ -24,26 +24,28 @@
 
                         <form class="profile-form" method="post" action="{{route('users.update', $user)}}">
                             {{ csrf_field() }}
-                            {{ method_field('patch') }}
+                            {{ method_field('post') }}
+                            <input type="hidden" name="user_id" value="{{ Auth::user() && Auth::user()->id }}">
                             <div class="field-row">
-                                <div class="form-group has-feedback has-success"> <label> <span class="field-label required">                                            Ф.И.О.                                            <strong class="required">*</strong>                                        </span> </label>
-                                    <div class="form-field"> <input type="text" name="fullName" value="{{ $user->name }}" maxlength="255" class="text-field" placeholder="Ф.И.О."  /> </div>
+                                <div class="form-group has-feedback has-success"> <label> <span class="field-label required">                                            
+                                @lang('home.full_name')                                            <strong class="required">*</strong>                                        </span> </label>
+                                    <div class="form-field"> <input type="text" name="name" value="{{ $user->name }}" maxlength="255" class="text-field" placeholder="Ф.И.О."  /> </div>
                                 </div>
                             </div>
 
                             <div class="field-row">
-                                <div class="form-group has-feedback has-success"> <label>Номер телефона</label>
+                                <div class="form-group has-feedback has-success"> <label>@lang('home.phone')</label>
                                     <div class="form-field"> 
                                         <input type="hidden" name="phone" value="+99890 xxx-xx-xx" disabled="" maxlength="255" class="text-field" placeholder="Номер телефона" />
-                                        <div class="mask-field no-mask full"> <input type="text" placeholder="Введите номер телефона" value="+998901234567" class="text-field" disabled="" /> </div>
+                                        <div class="mask-field no-mask full"> <input name="phone" type="text" placeholder="Введите номер телефона" value="{{ $user->phone }}" class="text-field"/> </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="field-row">
-                                <div class="form-group has-feedback has-success"> <label>Адрес эл. почты</label>
+                                <div class="form-group has-feedback has-success"> <label>Email</label>
                                     <div class="form-field"> <input type="email" name="email" value="{{ $user->email }}" maxlength="255" class="text-field" placeholder="Адрес эл. почты" /> </div>
                                 </div>
-                            </div> <button type="submit" class="save-button expanded success button"> Сохранить </button>
+                            </div> <button type="submit" class="save-button expanded success button"> @lang('home.save') </button>
                         </form>
                     </div>
                     <div class="user-achievements">

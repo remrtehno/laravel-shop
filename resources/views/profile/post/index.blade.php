@@ -52,7 +52,7 @@
                                     @foreach($prod as $item)
                                     <tr>
                                         <td>{{$item->id}}</td>
-                                        <td><a target="_blank" href="{{ route('detail',['slug'=>$item->slug]) }}"><span style="color: blue;">{{$item->title}}</span></a></td>
+                                        <td><a target="_blank" href="{{ route('detail',['slug'=>$item->slug]) }}"><span style="color: blue;">{{$item->getTitle()}}</span></a></td>
 
                                         <td>{{$item->price}}</td>
                                         <td>{{$item->label}}</td>

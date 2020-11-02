@@ -23,8 +23,8 @@
 
                 </a>
 
-                <h1>Добро пожаловать</h1>
-                <p> Зарегистрируйтесь на сайте с помощью номером телефона или E-mail или через социальную сеть </p>
+                <h1>@lang('home.welcome')</h1>
+                <p> @lang('home.register_text') </p>
 
                 <div class="form-group">
 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" class="form-control tel_uz" required autocomplete="name" autofocus placeholder="+998xx-xx-xx-xx">
@@ -39,12 +39,14 @@
 
                 <div class="form-group"> 
                     <select name="role">
-                        <option value="seller">Продавец</option>
-                        <option value="customer">Покупатель</option>
+                        <option value="seller">@lang('home.seller')</option>
+                        <option value="customer">
+                            @lang('home.customer')
+                        </option>
                     </select>
                 </div>
 
-                <div class="form-group"> <input type="text" name="email" class="form-control" value="" placeholder="Введите E-mail" /> </div>
+                <div class="form-group"> <input type="text" name="email" class="form-control" value="" placeholder="@lang('home.authlogin')" /> </div>
 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -52,7 +54,7 @@
                                 @enderror
 
 
-                <div class="form-group"> <input type="password" name="password" class="form-control" placeholder="Пароль" value="" /> </div>
+                <div class="form-group"> <input type="password" name="password" class="form-control" placeholder="@lang('home.pass')" value="" /> </div>
                  @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -63,15 +65,17 @@
                           
 
 
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="{{__('Подтвердите пароль') }}" autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="@lang('home.confirm_pass')" autocomplete="new-password">
 
                         </div>
 
-                <div class="agree_ser"> <input type="checkbox" required name="agree" id="ber" value="0" style="display: none" /> <label for="ber"> Я соглашаюсь с <a href="https://bisyor.uz/terms" target="_blank"> правилами использования сервиса </a> , а также с передачей и обработкой моих данных* </label> </div> <button type="submit" class="more_know blue"> Зарегистрироваться </button>
+                <div class="agree_ser"> <input type="checkbox" required name="agree" id="ber" value="0" style="display: none" /> <label for="ber">
+                    @lang('home.agree')
+                 </label> </div> <button type="submit" class="more_know blue"> @lang('home.reg') </button>
             </form>
             <div class="reg_bottom">
-                <p>© 2018-2020 site - Все права защищены</p>
-                <p> По вопросам: <a href="mailto:info@site.uz">info@site.uz</a> </p>
+                <p>© 2018-2020 site - @lang('home.copyright')</p>
+                <p> @lang('home.questions'): <a href="mailto:info@site.uz">info@site.uz</a> </p>
             </div>
         </section>
 

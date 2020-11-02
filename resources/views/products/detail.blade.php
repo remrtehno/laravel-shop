@@ -11,8 +11,8 @@
                     <nav style="position:relative">
                         <ul class="breadcrumbs">
                             <li> <a href="/">@lang('home.main')  </a> </li>
-                            <li> <a href="{{route('category',['slug'=>$poductCat->slug]) }}">{{$poductCat->title}}</a> </li>
-                            <li> <a>{{$product->title}} </a> </li>
+                            <li> <a href="{{route('category',['slug'=>$poductCat->slug]) }}">{{$poductCat->getTitle()}}</a> </li>
+                            <li> <a>{{$product->getTitle()}} </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="small-12 {{ $product->getShopByProduct() ? 'medium-3' : 'medium-6' }} columns">
                             <div class="product-detail animated fadeInUp normal" data-animation="animated fadeInUp normal">
-                                <h2 class="title"> {{ $product->title }} <div class="share-box"> <a class="share-link-button"><i class="link-share fa fa-share-square-o"></i></a>
+                                <h2 class="title"> {{ $product->getTitle() }} <div class="share-box"> <a class="share-link-button"><i class="link-share fa fa-share-square-o"></i></a>
 
                                     </div>
                                 </h2>
@@ -127,9 +127,10 @@
                                                                             <div class="product-image">
                                                                                 <img src="{{ $val->getImage() }}" class="product-img square-180" />
                                                                             </div>
-                                                                            <h4 class="product-title">{{$val->title}}</h4>
+                                                                            <h4 class="product-title">{{$val->getTitle()}}</h4>
                                                                             <div class="product__price clearfix">
                                                                                 <strong> {{$val->price}} <span>@lang('home.sumPerOne')</span>
+                                                                                </strong>
                                                                             </div>
                                                                             <div class="add-cart horizontal cart-44732 wide-box not-added"> <button class="button expanded add-to-cart"> <span class="gl-shopping-cart"></span>@lang('home.tobasket')</button> </div>
                                                                     </a> </div>

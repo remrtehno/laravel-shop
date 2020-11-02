@@ -47,10 +47,34 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">
+                                     @lang('home.profile_products-name') EN
+                                </label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title_en">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">
+                                     @lang('home.profile_products-name') UZ
+                                </label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title_uz">
+                            </div>
+
+                            <div class="form-group">
+                                <label>@lang('home.shop')</label>
+                                <select class="form-control select2" style="width: 100%;"name="shop_id">
+                                   @foreach($shops as $item)
+                                            <option value="{{$item->id}}">{{$item->getTitle()}}</option>
+
+                                        @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label>@lang('home.profile_products-cat')</label>
                                 <select class="form-control select2" style="width: 100%;"name="category_id">
                                    @foreach($cat as $item)
-                                            <option value="{{$item->id}}">{{$item->title}}</option>
+                                            <option value="{{$item->id}}">{{$item->getTitle()}}</option>
 
                                         @endforeach
                                 </select>

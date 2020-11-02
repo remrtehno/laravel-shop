@@ -18,16 +18,16 @@
 
 
                 <div class="small-12 medium-12 columns">
-                    <h3 align="center" style="color: #000" class="mb-5"> Оформление заказа </h3>
+                    <h3 align="center" style="color: #000" class="mb-5"> @lang('home.checkout') </h3>
                 </div>
                 <div class="small-12 medium-12 columns details basket">
                     <div class="latest-orders cabinet-block"><table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <td class="text-left">Название товара</td>
-                                    <td class="text-left">Количество</td>
-                                    <td class="text-right">Цена за единицу товара</td>
-                                    <td class="text-right">Всего</td>
+                                    <td class="text-left">@lang('home.name_product')</td>
+                                    <td class="text-left">@lang('home.qty')</td>
+                                    <td class="text-right">@lang('home.price_per_one')</td>
+                                    <td class="text-right">@lang('home.total')</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,7 +63,7 @@
                                 @else
                                 <tr>
                                     <td colspan="4">
-                                        <h3 align="center">Корзина пустая, добавьте товары</h3>
+                                        <h3 align="center">@lang('home.nothing')</h3>
                                     </td>
                                 </tr> 
                                 @endif
@@ -77,11 +77,11 @@
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <td class="text-right"><strong>Итого:</strong></td>
+                                        <td class="text-right"><strong>@lang('home.total2'):</strong></td>
                                         <td class="text-right">{{Cart::priceTotal()}}</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-right"><strong>Всего:</strong></td>
+                                        <td class="text-right"><strong>@lang('home.total'):</strong></td>
                                         <td class="text-right">{{Cart::priceTotal()}}</td>
                                     </tr>
                                    
@@ -91,9 +91,9 @@
                     @endif
                 </div>
                 <div class="buttons clearfix">
-                    <div class="pull-left"> <a href="/" class="btn btn-default"> Продолжить покупки </a> </div>
+                    <div class="pull-left"> <a href="/" class="btn btn-default"> @lang('home.buy_more') </a> </div>
                      @if(Cart::count()) 
-                    <div class="pull-right"> <a href="{{route('checkout')}}" class="btn btn-primary"> Оформление заказа </a> </div>
+                    <div class="pull-right"> <a href="{{route('checkout')}}" class="btn btn-primary"> @lang('home.continue') </a> </div>
                     @endif
                 </div>
                 </div>

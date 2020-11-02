@@ -17,7 +17,7 @@
                         <ul class="breadcrumbs">
                             <li> <a href="/">@lang('home.main') </a> </li>
 
-                            <li> <a href="{{route('category',['slug'=>$id->slug])}}">{{$id->title}} </a> </li>
+                            <li> <a href="{{route('category',['slug'=>$id->slug])}}">{{$id->getTitle()}} </a> </li>
 
                             
                         </ul>
@@ -36,7 +36,7 @@
                                         @foreach($cat as $item)
 
                         
-                                        <li class="{{$id->id == $item->id ? 'active' : ''}}"> <a class="clickable {{$id->id == $item->id ? 'active' : ''}}" aria-current="true" href="{{ route('category',['slug'=>$item->slug]) }}"> {{ $item->title }} </a> </li>
+                                        <li class="{{$id->id == $item->id ? 'active' : ''}}"> <a class="clickable {{$id->id == $item->id ? 'active' : ''}}" aria-current="true" href="{{ route('category',['slug'=>$item->slug]) }}"> {{ $item->getTitle() }} </a> </li>
 
                                         @endforeach
 

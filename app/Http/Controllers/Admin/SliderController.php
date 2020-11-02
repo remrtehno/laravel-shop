@@ -40,7 +40,7 @@ class SliderController extends Controller
     {
         $this->validate($request, [
             'title' =>'required',
-            'anonce' =>'required',
+
 
             'img' =>  'nullable|image'
         ]);
@@ -85,7 +85,7 @@ class SliderController extends Controller
     {
         $this->validate($request, [
             'title' =>'required',
-            'anonce' =>'required',
+
 
             'img' =>  'nullable|image'
         ]);

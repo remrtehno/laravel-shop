@@ -49,6 +49,28 @@
                                
                             </div>
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                         @lang('home.name') EN
+                                    </label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title_en">
+                                </div>
+
+                               
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">
+                                         @lang('home.name') UZ
+                                    </label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title_uz">
+                                </div>
+
+                               
+                            </div>
+
                            
 
                             <div class="col-md-6">

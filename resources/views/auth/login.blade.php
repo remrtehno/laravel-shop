@@ -15,9 +15,9 @@
                 </a>
 
                 @guest 
-                <h1>Авторизация</h1>
+                <h1>@lang('home.auth')</h1>
                 <div class="form-group">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Введите E-mail">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="@lang('home.authlogin')">
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -26,7 +26,7 @@
 
                
                 <div class="form-group"> 
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Пароль" required autocomplete="current-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="@lang('home.pass')" required autocomplete="current-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -42,16 +42,16 @@
                                     <input style="position: relative;" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Запомнить меня') }}
+                                        @lang('home.remember')
                                     </label>
                                 </div>
                             </div>
                         </div>
-                </div> <button type="submit" class="more_know blue">Войти</button>
+                </div> <button type="submit" class="more_know blue">@lang('home.enter')</button>
                 
-                <div class="login-buttons"> <a href="{{ route('password.request') }}">Забыли пароль?</a>
+                <div class="login-buttons"> <a href="{{ route('password.request') }}">@lang('home.forgot')</a>
                 @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Регистрация</a> 
+                                <a href="{{ route('register') }}">@lang('home.register')</a> 
                 @endif 
                 </div>
                 @else
@@ -81,8 +81,8 @@
 
 
             <div class="reg_bottom">
-                <p>© 2018-2020 site - Все права защищены</p>
-                <p> По вопросам: <a href="mailto:info@site.uz">info@site.uz</a> </p>
+                <p>© 2018-2020 site - @lang('home.copyright')</p>
+                <p> @lang('home.questions'): <a href="mailto:info@site.uz">info@site.uz</a> </p>
             </div>
         </section>
 

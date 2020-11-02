@@ -6,6 +6,10 @@ $(function () {
 		.autocomplete({
 			minLength: 2,
 			select: function (event, ui) {
+				if(locale) {
+					window.location = window.location.origin + '/' + locale + "/detail/" + ui.item.slug;
+					return;
+				}
 				window.location = "/detail/" + ui.item.slug;
 				console.log(event);
 			},

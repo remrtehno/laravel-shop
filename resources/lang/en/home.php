@@ -1,4 +1,3 @@
-
 <?php
 
 return [
@@ -43,6 +42,9 @@ return [
     'advantages_title_4' => 'Gift <br> vouchers',
     'advantages_desc_4' => 'We will help with the repair of goods',
     // profile
+    'full_name' => 'Full name',
+    'save' => 'Save',
+
     'profile_my' => 'My profile',
     'profile_products' => 'Products',
     'profile_orders' => 'Orders',
@@ -92,11 +94,41 @@ return [
 'for_suppliers' => 'Suppliers',
 
 
+// auth
+
+'auth' => 'Authorization',
+'reg' => 'Register',
+'enter' => 'Login',
+'remember' => 'Remember me',
+'forgot' => 'Forgot your password?',
+'register' => 'Register',
+'questions' => 'For questions',
+'authlogin' => 'Enter E-mail',
+'pass' => 'Password',
+'welcome' => 'Welcome',
+'register_text' => 'Register on the site using your phone number or E-mail or through a social network',
+'seller' => 'Seller',
+'customer' => 'Customer',
+'confirm_pass' => 'Confirm password',
+'agree' => 'I agree with the <a href="" target="_blank"> Terms of Service </a> and with the transmission and processing of my data *',
 
 
 
 
 
+'checkout' => 'Checkout',
+'buy_more' => 'Continue shopping',
+'continue' => 'Checkout',
+'name_product' => 'Product name',
+'qty' => 'Quantity',
+'price_per_one' => 'Unit price',
+'total' => 'Total',
+'total2' => 'Total',
+'Wishes_to_order' => 'Wishes for order',
+'Delivery_method' => 'Delivery method',
+'Self_call' => 'Self-call',
+'Delivery' => 'Delivery',
+'detail_order' => 'Order details',
 
 
 

@@ -49,7 +49,7 @@
                                 @foreach($shops as $item)
                                 <tr>
                                     <td>{{$item->id}}</td>
-                                    <td>{{$item->title}}</td>
+                                    <td>{{$item->getTitle()}}</td>
                                     <td>{!!$item->anonce!!}</td>
                                     <td> 
 

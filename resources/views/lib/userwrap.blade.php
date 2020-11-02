@@ -8,7 +8,7 @@
             <div class="banner" style="height:170px;">
                 <div class="banner_bg" style="background-image:url({{ $item->getImageHome() }}); opacity: .5"></div>
                 <div class="banner_content banner_style_black">
-                    <h2 style="color: white; font-weight: bold">{{ $item->title }}</h2>
+                    <h2 style="color: white; font-weight: bold">{{ $item->getTitle() }}</h2>
                    <br>
                     <a href="{{ route('detail',['slug'=>$item->slug]) }}" class="sc_button sc_button_square sc_button_style_style-8 sc_button_bg_custom sc_button_size_medium  sc_button_iconed none">
                         <span class="button-up" style="color: white">подробно</span>

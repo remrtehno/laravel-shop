@@ -173,7 +173,7 @@ padding: 10px 0;
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.hdr_top .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -282,6 +282,13 @@ body >           .ui-widget.ui-widget-content {
 .ui-menu-item  img {
       width: 35px;
   height: auto !important;
+}
+.hdr_bottom_main .dropdown-content {
+  padding: 0;
+
+}
+.hdr_bottom_main .cabinet-menu {
+  margin: 0;
 }
 
             @media (max-width: 992px) {
@@ -435,6 +442,7 @@ body >           .ui-widget.ui-widget-content {
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <script src="/public/assets/js/script.js"></script>
         <script src="/public/assets/js/jquery-ui.js"></script>
+        <script> var locale = "{{app()->getLocale() == 'ru' ? '' : app()->getLocale()}}"; </script>
         <script src="/public/assets/js/script2.js"></script>
     </body>
 </html>

@@ -70,7 +70,7 @@
                                                             <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> @lang('home.detail') </div>
                                                             <img src="{{ $val->getImage() }}" class="product-img square-180" />
                                                         </div>
-                                                        <h4 class="product-title">{{$val->title}}</h4>
+                                                        <h4 class="product-title">{{$val->getTitle()}}</h4>
                                                         <div class="product__price clearfix"> 
                                                             <strong> {{$val->price}} <span>
                                                                  <span>@lang('home.sumPerOne')</span> 
@@ -128,7 +128,7 @@
                                                             <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i> @lang('home.detail')</div>
                                                             <img src="{{ $val->getImage() }}" class="product-img square-180" />
                                                         </div>
-                                                        <h4 class="product-title">{{$val->title}}</h4>
+                                                        <h4 class="product-title">{{$val->getTitle()}}</h4>
                                                         <div class="product__price clearfix"> 
                                                             <strong> {{$val->price}} 
                                                                 <span>@lang('home.sumPerOne')</span> 

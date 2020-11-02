@@ -36,7 +36,7 @@
                                         @foreach($cat as $item)
 
                         
-                                        <li class=""> <a class="clickable" aria-current="true" href="{{ route('category',['slug'=>$item->slug]) }}"> {{ $item->title }} </a> </li>
+                                        <li class=""> <a class="clickable" aria-current="true" href="{{ route('category',['slug'=>$item->slug]) }}"> {{ $item->getTitle() }} </a> </li>
 
                                         @endforeach
 

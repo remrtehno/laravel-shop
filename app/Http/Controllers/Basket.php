@@ -42,14 +42,22 @@ class Basket extends Controller {
 		
 		Cart::add( $product->id, $product->title, 1, $price );
 		
-		return redirect( '/cart' );
+		if(app()->getLocale() == 'ru') {
+            return redirect('cart');
+        } else {
+            return redirect(app()->getLocale().'/cart');
+        }
 	}
 	
 	public function removeProductFromCart( $productId ) {
 		
 		Cart::remove( $productId );
 		
-		return redirect( '/cart' );
+		if(app()->getLocale() == 'ru') {
+            return redirect('cart');
+        } else {
+            return redirect(app()->getLocale().'/cart');
+        }
 	}
 	
 	# Our function for clearing all items from our cart
@@ -65,7 +73,11 @@ class Basket extends Controller {
 		
 		Cart::update( $id, (int) $quantity['quantity'] );
 		
-		return redirect( '/cart' );
+		if(app()->getLocale() == 'ru') {
+            return redirect('cart');
+        } else {
+            return redirect(app()->getLocale().'/cart');
+        }
 	}
 	
 	
@@ -120,10 +132,21 @@ class Basket extends Controller {
 		Cart::destroy();
 		
 		if ( Auth::check() ) {
-			return redirect( '/orders' );
+			if(app()->getLocale() == 'ru') {
+            return redirect('orders');
+        } else {
+            return redirect(app()->getLocale().'/orders');
+        }
+
 		}
+
+		if(app()->getLocale() == 'ru') {
+            return redirect('/');
+        } else {
+            return redirect(app()->getLocale().'/');
+        }
 		
-		return redirect( '/' );
+
 		
 	}
 	

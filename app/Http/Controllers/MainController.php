@@ -228,7 +228,12 @@ class MainController extends Controller
     
         if($product->price) $price = trim(preg_replace('/[ ,.]/', '', $product->price));
         Cart::add($product->id, $product->title, 1, $price);
-        return redirect('/cart');
+        
+        if(app()->getLocale() == 'ru') {
+            return redirect('cart');
+        } else {
+            return redirect(app()->getLocale().'/cart');
+        }
         
         
 

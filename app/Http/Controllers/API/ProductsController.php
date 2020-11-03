@@ -57,7 +57,7 @@ return response()->json(['success'=>$success], $this-> successStatus);
     public function list(Request $request) 
     { 
         $query = $request->all()['q']['term'];
-        $products = Product::where('title', 'like' , "%$query%")->get(); 
+        $products = Product::where("title", 'like' , "%$query%")->orWhere("title_en", 'like' , "%$query%")->orWhere("title_uz", 'like' , "%$query%")->get(); 
         return response()->json(['success' => $products], $this-> successStatus); 
     } 
 }

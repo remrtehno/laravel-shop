@@ -31,12 +31,24 @@ $(function () {
 		var img = "no-image.jpg";
 		if (item.img) img = item.img;
 
+		var title = '';
+		if(locale) {
+			title = item['title_'+locale];
+
+		} else {
+			title = item.title;
+		}
+
+
+
 		return $("<li>")
 			.attr("data-value", item.id)
 			.append(
 				"<img class='search-img' src='/uploads/products/small/" + img + "'>"
 			)
-			.append(item.title)
+
+			.append(title)
+				
 			.appendTo(ul);
 	};
 

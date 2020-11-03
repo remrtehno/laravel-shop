@@ -36,7 +36,7 @@
                                 <label for="exampleInputEmail1">Имя</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title">
                             </div>
-                            <div class="form-group">
+                           <!--  <div class="form-group">
                                 <label for="exampleInputEmail1">Имя EN</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title_en">
                             </div>
@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Имя UZ</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title_uz">
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label>Категория</label>

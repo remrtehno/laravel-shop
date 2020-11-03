@@ -41,7 +41,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">
-                                         @lang('home.name')
+                                         @lang('home.name') *
                                     </label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
                                 </div>
@@ -49,7 +49,7 @@
                                
                             </div>
 
-                            <div class="col-md-6">
+   <!--                          <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">
                                          @lang('home.name') EN
@@ -69,14 +69,14 @@
                                 </div>
 
                                
-                            </div>
+                            </div> -->
 
                            
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">
-                                        @lang('home.address')
+                                        @lang('home.address') *
                                     </label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="address">
                                 </div>
@@ -98,7 +98,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">
-                                      @lang('home.phone')  
+                                      @lang('home.phone') *
                                     </label>
                                     <input type="text" class="form-control" placeholder="+998901232323" id="exampleInputEmail1" placeholder="" name="phone">
                                 </div>

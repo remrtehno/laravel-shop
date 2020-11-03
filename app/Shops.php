@@ -29,9 +29,7 @@ class Shops extends Model
     }
 
     public function getTitle() {
-        if(app()->getLocale() == 'ru') return $this->title;
-        $lang = "title_".app()->getLocale();
-        return $this->{$lang};
+        return $this->title;
     }
 
     public  function statistics(){

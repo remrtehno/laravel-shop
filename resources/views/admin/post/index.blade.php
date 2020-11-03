@@ -49,7 +49,8 @@
                         @foreach($prod as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td> <b>ru: </b>{{ $item->title }} <br>  <b>en:</b> {{ $item->title_en }} <br> <b>uz:</b> {{ $item->title_uz }}</td>
+                            <td> <b>{{ $item->title }}</b> <!-- br>  <b>en:</b> {{ $item->title_en }} <br> <b>uz:</b> {{ $item->title_uz }} -->
+                            </td>
                            
                             <td>{{ $item->price ? $item->price : 0 }} <br> 
                                  @if($item->label)

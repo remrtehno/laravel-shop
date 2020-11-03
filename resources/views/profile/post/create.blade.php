@@ -46,7 +46,7 @@
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title">
                             </div>
 
-                            <div class="form-group">
+             <!--                <div class="form-group">
                                 <label for="exampleInputEmail1">
                                      @lang('home.profile_products-name') EN
                                 </label>
@@ -58,7 +58,7 @@
                                      @lang('home.profile_products-name') UZ
                                 </label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""  name="title_uz">
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label>@lang('home.shop')</label>

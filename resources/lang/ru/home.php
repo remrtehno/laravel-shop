@@ -130,7 +130,7 @@ return [
 'description' => 'Описание',
 
 
-
+'first_add_shop'=> 'Сначала добавьте магазин',
 
 
 

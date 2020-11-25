@@ -9,6 +9,31 @@
 
 @section('content')
 
+@if ($errors->any())
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-10">
+    			<div class="alert alert-danger">
+			        <ul style="
+    background: red;
+    color: white;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    margin-top: 24px;
+    padding: 10px;
+">
+			            @foreach ($errors->all() as $error)
+			                <li>{{ $error }}</li>
+			            @endforeach
+			        </ul>
+			    </div>
+    		</div>
+    	</div>
+    </div>
+@endif
+
+
             <section class="user-cabinet beauty-wrapper">
             <div class="row">
                 <div class="small-12 medium-12 columns">
@@ -22,6 +47,9 @@
 </div>
 
                 <div class="small-12 medium-9 columns details">
+                    
+                    @if($shops->count())
+                    
                     <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" value="{{$user_id}}" name="user_id">
@@ -105,7 +133,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">@lang('home.price')</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="price" >
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="price" onkeyup="this.value = this.value.replace(/[^0-9]+$/, '')"  >
                             </div>
 
                             <div class="form-group">
@@ -167,6 +195,17 @@
                 </div>
 
             </form>
+            @else
+            <br>
+            <p></p>
+                <h3 align="center" style="font-size: 28px;">@lang('home.first_add_shop')</h3>
+                <p align="center" >
+                    <br>
+                    <a href="{{ route('seller-shops.create') }}" class="btn btn-success">
+                             @lang('home.add')
+                        </a>
+                        </p>
+            @endif
 
                     
                 </div>

@@ -72,7 +72,7 @@
                         @else
 
                         <div align="center"><img src="/assets/img/free_score.png" alt="No datas"><br> <br>
-                            <h3>Пусто</h3>
+                            <h3>  @lang('home.nothing')</h3>
                         </div>
 
                         @endif

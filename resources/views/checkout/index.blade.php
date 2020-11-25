@@ -31,15 +31,15 @@
                             </div><!-- /.col-md-12 -->
                             <div class="col-md-6">
                                 <div class="input-group-addon" id="basic-addon1">@lang('home.name')</div>
-                                <input type="text" class="form-control" name="name_customer">
+                                <input type="text" class="form-control" name="name_customer" value="{{$user = Auth::user() ? Auth::user()->name : ''}}">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
                                 <div class="input-group-addon" id="basic-addon1">Email</div>
-                                <input type="text" class="form-control" name="email_customer">
+                                <input type="text" class="form-control" name="email_customer" value="{{$user = Auth::user() ? Auth::user()->email : ''}}">
                             </div><!-- /.col-md-6 -->
                              <div class="col-md-12">
                                 <div class="input-group-addon" id="basic-addon1">@lang('home.phone')</div>
-                                <input type="text" class="form-control" name="phone_customer">
+                                <input type="text" class="form-control" name="phone_customer" value="{{$user = Auth::user() ? Auth::user()->phone : ''}}">
                             </div><!-- /.col-md-12 -->
                              <div class="col-md-12">
                                 <div class="input-group-addon" id="basic-addon1">@lang('home.address')</div>

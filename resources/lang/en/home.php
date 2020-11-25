@@ -131,7 +131,7 @@ return [
 'detail_order' => 'Order details',
 
 
-
+'first_add_shop'=> 'Firstly you have to add shop',
 
 
 

@@ -29,7 +29,7 @@ class RedirectIfAuthenticated
              break; 
 
           default:
-             return redirect('/index'); 
+             return redirect('/profile'); 
              break;
         }
       }

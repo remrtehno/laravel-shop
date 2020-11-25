@@ -93,7 +93,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1"> @lang('home.price')</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="price" value="{{ $sl->price ? $sl->price : $sl->price }}" >
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="price" value="{{ $sl->price ? $sl->price : $sl->price }}" onkeyup="this.value = this.value.replace(/[^0-9]+$/, '')" >
                             </div>
 
                             <div class="form-group">

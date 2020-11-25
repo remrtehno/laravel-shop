@@ -36,8 +36,8 @@
                             <div class="field-row">
                                 <div class="form-group has-feedback has-success"> <label>@lang('home.phone')</label>
                                     <div class="form-field"> 
-                                        <input type="hidden" name="phone" value="+99890 xxx-xx-xx" disabled="" maxlength="255" class="text-field" placeholder="Номер телефона" />
-                                        <div class="mask-field no-mask full"> <input name="phone" type="text" placeholder="Введите номер телефона" value="{{ $user->phone }}" class="text-field"/> </div>
+                                        <input type="hidden" name="phone" value="+99890 xxx-xx-xx" disabled="" maxlength="255" class="text-field" placeholder="" />
+                                        <div class="mask-field no-mask full"> <input name="phone" type="text" placeholder="+99890 xxx-xx-xx" value="{{ $user->phone }}" class="text-field"/> </div>
                                     </div>
                                 </div>
                             </div>

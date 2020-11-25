@@ -418,13 +418,13 @@ body >           .ui-widget.ui-widget-content {
                             <h4>@lang('home.footer_menu_title_4')</h4>
                             <p>
                                 <a href="tel:{{$footer_contacts->phone}}">
-                                    {{$footer_contacts->phone}}
+                                    {!!$footer_contacts->phone!!}
                                 </a>
 
                                 <span>
-                                    {{$footer_contacts->address}}
+                                    {!!$footer_contacts->address!!}
                                 </span>
-                                <a href="mailto:{{$footer_contacts->email}}">{{$footer_contacts->email}}</a>
+                                <a href="mailto:{{$footer_contacts->email}}">{!!$footer_contacts->email!!}</a>
                             </p>
                         </div>
                     </div>

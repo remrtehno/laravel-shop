@@ -81,11 +81,11 @@
                                     <h3 class="h3 title-company-info">@lang('home.contacts')</h3>
                                     <a  class="product-right-title">
 
-                                        @lang('home.address'): <b>{{$contacts->address}}</b>
+                                        @lang('home.address'): <b>{!!$contacts->address!!}</b>
                                     </a>
                                     <div class="mer-lname">
-                                        @lang('home.phone'): <a href="tel:{{$contacts->phone}}"> {{$contacts->phone}} </a> <br>
-                                        Email: <a href="mailto:{{$contacts->email}}"> {{$contacts->email}} </a>
+                                        @lang('home.phone'): <a href="tel:{{$contacts->phone}}"> {!!$contacts->phone!!} </a> <br>
+                                        Email: <a href="mailto:{{$contacts->email}}"> {!!$contacts->email!!} </a>
 
                                     </div>
                                     <br>

@@ -154,6 +154,7 @@ $(function () {
 			var total = $(this).data('amount') || 0;
 
             total = parseFloat(preTotal)  + parseFloat(total)*parseFloat(preTotal);
+            total = Math.ceil(total);
 
 			$('.total').val(total).html(total);
 

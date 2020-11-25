@@ -75,7 +75,7 @@ class AboutController extends Controller
         $this->validate($request, [
             'title' =>'required',
             'anonce' =>'required',
-            'text' =>'required',
+            //'text' =>'required',
             'img' =>  'nullable|image'
 
         ]);

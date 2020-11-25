@@ -6,12 +6,12 @@
 
     <div class="page_top_wrap page_top_title page_top_breadcrumbs" style="margin-top: 130px">
         <div class="content_wrap">
-            <div class="breadcrumbs">
+            <!-- <div class="breadcrumbs">
                 <a class="breadcrumbs_item home" href="/" title="Home">Главная</a>
                 <span class="breadcrumbs_delimiter"></span>
                 <span class="breadcrumbs_item current">контакты</span>
-            </div>
-            <h1 class="page_title">Контакты</h1>
+            </div> -->
+            <h1 class="page_title" align="center">Контакты</h1>
         </div>
     </div>
 
@@ -43,7 +43,7 @@
                                                      style="margin-top:2em !important; ">
                                                     <div class="wpb_text_column wpb_content_element">
                                                         <div class="wpb_wrapper">
-                                                            <p>{!! $item->email !!} </p>
+                                                            <h3>{!! $item->email !!} </h3>
 
                                                         </div>
                                                     </div>
@@ -58,7 +58,7 @@
                                                      style="margin-top:2em !important;">
                                                     <div class="wpb_text_column wpb_content_element">
                                                         <div class="wpb_wrapper">
-                                                            <p>{!! $item->phone !!} </p>
+                                                            <h3>{!! $item->phone !!} </h3>
 
                                                         </div>
                                                     </div>
@@ -73,7 +73,7 @@
                                                      style="margin-top:2em !important; ">
                                                     <div class="wpb_text_column wpb_content_element ">
                                                         <div class="wpb_wrapper">
-                                                            <p>{!! $item->address !!} </p>
+                                                            <h2>{!! $item->address !!} </h2>
 
                                                         </div>
                                                     </div>
@@ -91,13 +91,22 @@
                 <!-- </article> class="itemscope post_item post_item_single post_featured_default post_format_standard post-355 page type-page status-publish hentry" itemscope itemtype="http://schema.org/Article"> -->
                 <section class="related_wrap related_wrap_empty"></section>
 
+
             </div>
             <!-- </div> class="content"> -->
         </div>
         <!-- </div> class="content_wrap"> -->
     </div>
+<style>
+    .wpb_wrapper p {
+        font-size: inherit;
+        margin: 0;
+    }
+    .wpb_wrapper h3 {
+        margin-bottom: 0;
+    }
+</style>
 
 
-    <div  style="width:100%;height:400px;"></div>
 @endsection
 

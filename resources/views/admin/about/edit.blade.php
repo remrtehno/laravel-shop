@@ -34,6 +34,16 @@
                                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->title }}" name="title">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Имя EN</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->title_en }}" name="title_en">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Имя UZ</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->title_uz }}" name="title_uz">
+                                    </div>
+
 
                                     <div class="form-group">
                                         <img src="{{ $sl->getImage() }}" alt="" class="img-responsive" width="200">
@@ -51,13 +61,25 @@
                                         <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce }}</textarea>
                                     </div>
                                 </div>
-
                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Описание на главной странице EN</label>
+                                        <textarea name="anonce_en" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce_en }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Описание на главной странице UZ</label>
+                                        <textarea name="anonce_uz" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce_uz }}</textarea>
+                                    </div>
+                                </div>
+
+                               <!--  <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Полное Описание</label>
                                         <textarea name="text" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->text }}</textarea>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
 

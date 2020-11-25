@@ -9,7 +9,7 @@ use Intervention\Image\Facades\Image;
 class About extends Model
 {
     protected $table = "abouts";
-    protected $fillable = ['title','anonce','text'];
+    protected $fillable = ['title','title_en','title_uz', 'anonce', 'anonce_en', 'anonce_uz'];
 
 
 
@@ -63,7 +63,17 @@ class About extends Model
         return '/uploads/about/' . $this->img;
     }
 
+    public function getTitle() {
+        if(app()->getLocale() == 'ru') return $this->title;
+        $lang = "title_".app()->getLocale();
+        return $this->{$lang};
+    }
 
+    public function getAnonce() {
+        if(app()->getLocale() == 'ru') return $this->anonce;
+        $lang = "anonce_".app()->getLocale();
+        return $this->{$lang};
+    }
 
 
     public static function getAbout(){
